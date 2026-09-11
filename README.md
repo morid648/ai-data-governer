@@ -235,6 +235,22 @@ When the workflow completes, the stakeholder receives:
 
 ---
 
+
+=======
+## Enterprise Production Roadmap
+
+- [ ] **Apache Airflow Orchestration**: Transition trigger layer to Airflow DAGs for automated weekly health check schedules.
+- [ ] **Slack / Teams Interactive Approvals**: Native interactive blocks for real-time channel reviews alongside email.
+- [ ] **Database Audit Table**: Immutable `governance_audit_log` table storing raw query strings, row counts, and rollbacks.
+- [ ] **Automated Rollback Engine**: Automatic point-in-time recovery for rejected or failed batch updates.
+
+---
+**Built by :**
+- [Anshul](https://github.com/morid648) 
+- [LinkedIn](https://www.linkedin.com/in/anshul-chaudhary-508138308/)
+
+
+
 ## License
 
 This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
