@@ -12,7 +12,7 @@ DATA_DIR = os.path.join(os.path.dirname(__file__), "..", "data", "raw")
 
 def profile_dataset():
     print("=" * 80)
-    print("AI DATA GOVERNOR — BASELINE DATA-QUALITY AUDIT")
+    print("AI DATA GOVERNOR -- BASELINE DATA-QUALITY AUDIT")
     print("=" * 80)
 
     # 1. Load CSVs

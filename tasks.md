@@ -126,27 +126,32 @@ flowchart TD
 
 ## Phase 1: Database Setup & Raw "Dirty" Data Ingestion
 
-- [x] **TASK-1.1: Create Target PostgreSQL Tables (Without Foreign Keys)**
+- [x] **TASK-1.1: Create Target PostgreSQL Tables (Without Foreign Keys or Primary Keys)**
   - **Description**: Execute the DDL to create the 5 tables (`dim_customer`, `dim_market`, `dim_product`, `fact_sales_monthly`, `fact_forecast_monthly`) as defined in PRD Section 10.
   - **Depends On**: TASK-0.2.
   - **Action Items**:
     - Draft `scripts/01_create_tables.sql` defining:
-      - `dim_customer` (`customer text`, `market text`, `platform text`, `channel text`, `customer_code text primary key`)
-      - `dim_market` (`market text primary key`, `sub_zone text`, `region text`)
-      - `dim_product` (`product_code text primary key`, `division text`, `segment text`, `category text`, `product text`, `variant text`)
+      - `dim_customer` (`customer text`, `market text`, `platform text`, `channel text`, `customer_code text`)
+      - `dim_market` (`market text`, `sub_zone text`, `region text`)
+      - `dim_product` (`product_code text`, `division text`, `segment text`, `category text`, `product text`, `variant text`)
       - `fact_sales_monthly` (`date date`, `division text`, `category text`, `product_code text`, `product text`, `market text`, `platform text`, `channel text`, `customer_code text`, `customer_name text`, `sold_quantity text`)
       - `fact_forecast_monthly` (`date date`, `division text`, `category text`, `product_code text`, `product text`, `market text`, `platform text`, `channel text`, `customer_code text`, `customer_name text`, `forecast_quantity text`)
-    - Intentionally omit foreign key constraints so dirty data loads cleanly without DB-level rejection.
-    - Run the DDL script in Supabase SQL Editor.
-  - **Acceptance Criteria**: All 5 tables created with 0 rows and correct column types.
+    - Intentionally omit foreign key and primary key constraints so raw dirty data (including duplicate rows and orphan keys) loads cleanly without DB-level rejection.
+    - Run the DDL script in Supabase SQL Editor or via automated runner `scripts/setup_and_seed_db.py`.
+  - **Acceptance Criteria**: All 5 tables created with correct column types ready for dirty data ingestion.
 
 - [x] **TASK-1.2: Ingest Raw CSV Files into Supabase Tables**
   - **Description**: Load the dirty CSV data into the 5 created tables, preserving all dirty values, placeholders, and nulls.
   - **Depends On**: TASK-1.1.
   - **Action Items**:
-    - Import CSV data using Supabase Table Editor Import, `\copy` command, or a Python staging loader script (`scripts/load_raw_data.py`).
-    - Confirm all rows load without truncation or silent data alteration.
-  - **Acceptance Criteria**: Row counts match expectations (`fact_sales_monthly` ~21,503 rows, `fact_forecast_monthly` ~21,802 rows, dimensions fully populated).
+    - Load dirty CSVs via `python scripts/setup_and_seed_db.py` (or `scripts/load_raw_data.py` / `scripts/01b_insert_raw_data.sql`).
+    - Ingest all 5 datasets:
+      - `dim_customer`: 219 rows
+      - `dim_market`: 28 rows
+      - `dim_product`: 417 rows
+      - `fact_sales_monthly`: 21,503 rows
+      - `fact_forecast_monthly`: 21,802 rows
+  - **Acceptance Criteria**: Database row counts exactly match raw CSV row counts (43,969 total records ingested).
 
 - [x] **TASK-1.3: Run Profiling Verification Queries to Establish Baseline Ground Truth**
   - **Description**: Verify the exact dirty data anomalies identified in PRD Section 2 exist in the database.
@@ -478,11 +483,12 @@ flowchart TD
   - **Description**: Execute the entire n8n workflow from Manual Trigger through final email delivery on a fresh dirty dataset.
   - **Depends On**: TASK-1.2, TASK-3.4, TASK-4.3, TASK-5.4, TASK-7.4.
   - **Action Items**:
-    - Re-seed Supabase database with fresh dirty CSV data.
+    - Re-seed Supabase database with fresh dirty CSV data via `python scripts/setup_and_seed_db.py`.
+    - Run automated test suite `python scripts/test_workflow_suite.py` to validate topology, Draft-07 schemas, dynamic inference, and branching logic.
     - Click `Test workflow` / Manual Trigger in n8n.
     - Complete the availability approval email ("Yes").
     - Approve 3 consecutive SQL fixes ("Approve").
-    - Verify Fixer executes queries.
+    - Verify Fixer executes queries via linked `SQL Query executor` sub-workflow (`P8xLBRRw2OIW2hXQ`).
     - Verify Google Doc generates and final email arrives.
   - **Acceptance Criteria**: Complete workflow finishes with green status across all nodes; Google Doc contains executed SQL; email link works.
 

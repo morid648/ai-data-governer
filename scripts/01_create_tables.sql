@@ -13,13 +13,13 @@ CREATE TABLE dim_customer (
     market          TEXT,
     platform        TEXT,
     channel         TEXT,
-    customer_code   TEXT PRIMARY KEY
+    customer_code   TEXT
 );
 
 -- 2. Market Dimension
 DROP TABLE IF EXISTS dim_market CASCADE;
 CREATE TABLE dim_market (
-    market          TEXT PRIMARY KEY,
+    market          TEXT,
     sub_zone        TEXT,
     region          TEXT
 );
@@ -27,7 +27,7 @@ CREATE TABLE dim_market (
 -- 3. Product Dimension
 DROP TABLE IF EXISTS dim_product CASCADE;
 CREATE TABLE dim_product (
-    product_code    TEXT PRIMARY KEY,
+    product_code    TEXT,
     division        TEXT,
     segment         TEXT,
     category        TEXT,

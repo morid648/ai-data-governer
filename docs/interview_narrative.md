@@ -44,6 +44,10 @@
 - **The Problem Faced**: "Initially, onboarding a new dataset meant manually opening Supabase's SQL editor and running three separate scripts — create tables, seed raw records, verify baseline issues — before any audit could even start. That manual step undercut the whole point of a tool built around automation."
 - **The Architectural Solution**: "I engineered a drag-and-drop ingestion path directly into the n8n workflow. An n8n Form Trigger accepts any CSV or Excel file, a custom Code node infers the schema on the fly (normalizing column names, detecting dates and numbers vs resilient text, and generating dynamic DDL), and Postgres nodes auto-create the table and batch-load the rows. The Master Data Investigator kicks off the moment the data lands — eliminating manual SQL and turning the system into a dataset-agnostic governance platform."
 
+### 6. Real-World Multi-Agent Production Edge Cases & Debugging
+- **Token Starvation vs Context Window (8K TPM vs 1M Window)**: "During live execution, an 8K Tokens-Per-Minute rate limit on a small model tier can silently cripple an agent when multi-table schemas are fed into tool loops. After two tool iterations, cumulative prompt tokens triggered 429 backoffs, consuming the iteration budget and causing premature halts (`Agent stopped due to max iterations`). Migrating the Investigator to Google Gemini (1M token window) and calibrating `maxIterations` to 15 completely resolved the bottleneck."
+- **Sub-Workflow Tool Decoupling (`toolWorkflow`)**: "In n8n, AI agents execute database modifications through dedicated sub-workflows rather than monolithic tool nodes. When a sub-workflow reference is unlinked, the agent encounters runtime routing errors. Implementing a modular `SQL Query executor` sub-workflow with an `executeWorkflowTrigger` cleanly encapsulated database permissions and allowed robust query routing."
+
 ---
 
 ## Production Roadmap (What I Would Enhance at Enterprise Scale)

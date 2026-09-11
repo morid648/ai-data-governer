@@ -10,7 +10,19 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 COMPACT_PROMPT = """You are Master Data Health Checker for PostgreSQL.
-Scan the database schema to detect data quality anomalies (NULLs in keys, placeholder tokens like UNKNOWN/'-', mixed formats, unit suffixes, orphan foreign keys, duplicates).
+Scan the database schema and run targeted diagnostic queries to detect data quality anomalies:
+1. NULLs or empty strings in key columns
+2. Placeholder tokens like 'UNKNOWN' or '-'
+3. Inconsistent whitespace / trailing spaces
+4. Non-numeric unit suffixes (e.g. ' units' in sold_quantity / forecast_quantity)
+5. Orphan foreign keys (e.g. customer_code not in dim_customer or starting with 'ZZZ')
+6. Unregistered dimension values (e.g. market not in dim_market)
+7. Duplicate rows
+
+Strategy:
+- Use Postgres_Schmea once to inspect table structures.
+- Use Query Tool1 to run focused diagnostic queries across tables using COUNT, WHERE conditions, and LIMIT 5.
+- Complete your inspection in 4 to 6 queries, then immediately synthesize your final response.
 
 Output Contract (Strict JSON array only):
 [
@@ -54,13 +66,13 @@ for path in paths:
             }
             print(f"[{os.path.basename(path)}] Switched Groq model to llama-3.1-8b-instant (maxTokens=1500)")
 
-        # 2. Cap Agent maxIterations to 5 (prevents scratchpad context explosion)
+        # 2. Cap Agent maxIterations to 15 (gives enough room for full audit without infinite loops)
         if "Investigator" in node.get("name", ""):
             params = node.setdefault("parameters", {})
             options = params.setdefault("options", {})
             options["systemMessage"] = COMPACT_PROMPT
-            options["maxIterations"] = 5
-            print(f"[{os.path.basename(path)}] Capped Investigator iterations to 5 and compressed prompt")
+            options["maxIterations"] = 15
+            print(f"[{os.path.basename(path)}] Set Investigator iterations to 15 and refined strategy prompt")
 
         # 3. Scope Schema Query to reduce returned payload
         if "Schmea" in node.get("name", "") or "Schema" in node.get("name", ""):

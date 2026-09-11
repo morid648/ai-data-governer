@@ -6,7 +6,11 @@ This document specifies the exact personas, system prompts, Draft-07 JSON schema
 
 ## 1. Agent 1: Master Data Investigator Agent
 
-- **LLM Model**: Groq — Kimi K2 (or equivalent fast inference model)
+- **LLM Model**: Google Gemini 2.5 / 3.6 Flash (Primary; 1M context window prevents 8K TPM rate-limit bottlenecks) or Groq (Optional)
+- **Iteration Budget**: `maxIterations: 15` (sized for schema inspection + 4–6 targeted diagnostic queries + synthesis)
+- **Connected Tools**:
+  - `Postgres_Schmea` (`n8n-nodes-base.postgresTool`): Fetches column metadata and table schemas.
+  - `Query Tool1` (`@n8n/n8n-nodes-langchain.toolWorkflow`): Dispatches generated SQL to sub-workflow `P8xLBRRw2OIW2hXQ` (*SQL Query executor*) to query Supabase PostgreSQL.
 - **Role / Persona**: Master Data Health Checker
 - **Mission**: Scans all schemas, tables, and columns using the provided query interface to detect data quality anomalies.
 - **Evaluation Checks**:
@@ -98,6 +102,9 @@ Do NOT wrap the output in markdown code blocks, objects, or extra commentary.
 - **LLM Model**: Google Gemini 2.5 Flash
 - **Role / Persona**: SQL Generator & Executor
 - **Mission**: Receives a single human-approved issue, generates targeted PostgreSQL DML (`UPDATE` or `DELETE`), and executes it via the connected query tool.
+- **Connected Tools**:
+  - `Postgres Schema` (`n8n-nodes-base.postgresTool`): Fetches table definition.
+  - `Query Tool` (`@n8n/n8n-nodes-langchain.toolWorkflow`): Dispatches approved remediation SQL to sub-workflow `P8xLBRRw2OIW2hXQ` (*SQL Query executor*) for execution.
 - **Safety Boundaries**:
   - Strictly forbidden: `DROP`, `ALTER`, `TRUNCATE`, `CREATE`, `GRANT`, `REVOKE`.
   - Scoped to target PostgreSQL tables with precise `WHERE` clauses.

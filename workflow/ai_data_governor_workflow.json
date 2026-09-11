@@ -140,24 +140,20 @@
     },
     {
       "parameters": {
-        "model": "llama-3.1-8b-instant",
-        "options": {
-          "maxTokens": 1500,
-          "temperature": 0.1
-        }
+        "options": {}
       },
-      "type": "@n8n/n8n-nodes-langchain.lmChatGroq",
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
       "typeVersion": 1,
       "position": [
         -1072,
         304
       ],
       "id": "698a59e7-4dda-4bd6-b334-c1bf9712dc20",
-      "name": "Groq-Kimi-K2",
+      "name": "Gemini-2.5-Flash-Investigator",
       "credentials": {
-        "groqApi": {
-          "id": "hswlhgJGsBpROE88",
-          "name": "Groq account"
+        "googlePalmApi": {
+          "id": "LOATuqUu1riJlXTw",
+          "name": "Google Gemini(PaLM) Api account"
         }
       }
     },
@@ -737,8 +733,8 @@
         "text": "Run a full data\u2011quality audit on the connected PostgreSQL database.",
         "hasOutputParser": true,
         "options": {
-          "systemMessage": "You are Master Data Health Checker for PostgreSQL.\nScan the database schema to detect data quality anomalies (NULLs in keys, placeholder tokens like UNKNOWN/'-', mixed formats, unit suffixes, orphan foreign keys, duplicates).\n\nOutput Contract (Strict JSON array only):\n[\n  {\n    \"issue_id\": \"ISSUE-001\",\n    \"category\": \"Fixable with SQL\",\n    \"description\": \"Concise summary under 200 chars\",\n    \"sample_values\": [\"sample1\", \"sample2\"],\n    \"suggestion\": \"Proposed remediation under 200 chars\"\n  }\n]\nCategories must be either \"Fixable with SQL\" or \"Needs Policy Establishment\".\nIf no issues found, return []. JSON array only, no markdown.",
-          "maxIterations": 5,
+          "systemMessage": "You are Master Data Health Checker for PostgreSQL.\nScan the database schema and run targeted diagnostic queries to detect data quality anomalies:\n1. NULLs or empty strings in key columns\n2. Placeholder tokens like 'UNKNOWN' or '-'\n3. Inconsistent whitespace / trailing spaces\n4. Non-numeric unit suffixes (e.g. ' units' in sold_quantity / forecast_quantity)\n5. Orphan foreign keys (e.g. customer_code not in dim_customer or starting with 'ZZZ')\n6. Unregistered dimension values (e.g. market not in dim_market)\n7. Duplicate rows\n\nStrategy:\n- Use Postgres_Schmea once to inspect table structures.\n- Use Query Tool1 to run focused diagnostic queries across tables using COUNT, WHERE conditions, and LIMIT 5.\n- Complete your inspection in 4 to 6 queries, then immediately synthesize your final response.\n\nOutput Contract (Strict JSON array only):\n[\n  {\n    \"issue_id\": \"ISSUE-001\",\n    \"category\": \"Fixable with SQL\",\n    \"description\": \"Concise summary under 200 chars\",\n    \"sample_values\": [\"sample1\", \"sample2\"],\n    \"suggestion\": \"Proposed remediation under 200 chars\"\n  }\n]\nCategories must be either \"Fixable with SQL\" or \"Needs Policy Establishment\".\nIf no issues found, return []. JSON array only, no markdown.",
+          "maxIterations": 15,
           "batching": {
             "delayBetweenBatches": 6000
           }
@@ -987,17 +983,6 @@
         ]
       ]
     },
-    "Groq-Kimi-K2": {
-      "ai_languageModel": [
-        [
-          {
-            "node": "Master Data Investigator Agent",
-            "type": "ai_languageModel",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Gemini-2.5-Flash": {
       "ai_languageModel": [
         [
@@ -1232,6 +1217,17 @@
           {
             "node": "Master Data Investigator Agent",
             "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gemini-2.5-Flash-Investigator": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Master Data Investigator Agent",
+            "type": "ai_languageModel",
             "index": 0
           }
         ]
