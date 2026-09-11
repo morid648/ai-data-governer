@@ -1,0 +1,1252 @@
+{
+  "name": "AI Data Governor - Multi-Agent Audit & Remediation",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -1232,
+        16
+      ],
+      "id": "285acdb8-d840-405e-b5d7-f1bbd723c586",
+      "name": "When clicking \u2018Execute workflow\u2019"
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "output",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        -704,
+        16
+      ],
+      "id": "10cab786-81f1-4dcc-94cf-df3b9064b03c",
+      "name": "Split Out"
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "advanced": true,
+        "mergeByFields": {
+          "values": [
+            {
+              "field1": "issue_id",
+              "field2": "output[0].issue_id"
+            }
+          ]
+        },
+        "joinMode": "enrichInput1",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        176,
+        352
+      ],
+      "id": "eb316824-6515-48f1-9b5b-4948d36486c4",
+      "name": "Merge",
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "schemaType": "manual",
+        "inputSchema": "{\n  \"$schema\": \"http://json-schema.org/draft-07/schema#\",\n  \"type\": \"array\",\n  \"items\": {\n    \"type\": \"object\",\n    \"properties\": {\n      \"issue_id\": {\n        \"type\": \"string\",\n        \"pattern\": \"^ISSUE-\\\\d{3}$\"\n      },\n      \"category\": {\n        \"type\": \"string\",\n        \"enum\": [\n          \"Fixable with SQL\",\n          \"Needs Policy Establishment\"\n        ]\n      },\n      \"description\": {\n        \"type\": \"string\",\n        \"maxLength\": 200\n      },\n      \"sample_values\": {\n        \"type\": \"array\",\n        \"items\": {\n          \"type\": \"string\"\n        },\n        \"minItems\": 1,\n        \"maxItems\": 5\n      },\n      \"suggestion\": {\n        \"type\": \"string\",\n        \"maxLength\": 200\n      }\n    },\n    \"required\": [\n      \"issue_id\",\n      \"category\",\n      \"description\",\n      \"sample_values\",\n      \"suggestion\"\n    ],\n    \"additionalProperties\": false\n  }\n}\n"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        -720,
+        224
+      ],
+      "id": "38863fc6-b1e2-409a-a325-735974a34876",
+      "name": "Structured Output Parser2"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        160,
+        -112
+      ],
+      "id": "259b0761-c9a2-48de-ae2b-df0511ae1bc0",
+      "name": "Loop Over Items"
+    },
+    {
+      "parameters": {
+        "schemaType": "manual",
+        "inputSchema": "{\n  \"$schema\": \"http://json-schema.org/draft-07/schema#\",\n  \"type\": \"array\",\n  \"items\": {\n    \"type\": \"object\",\n    \"properties\": {\n      \"issue_id\": {\n        \"type\": \"string\",\n        \"pattern\": \"^ISSUE-\\\\d{3}$\"\n      },\n      \"status\": {\n        \"type\": \"string\",\n        \"enum\": [\"resolved\", \"failed\"]\n      },\n      \"message\": {\n        \"type\": \"string\"\n      },\n      \"executed_sql\": {\n        \"type\": \"string\"\n      }\n    },\n    \"required\": [\"issue_id\", \"status\", \"message\", \"executed_sql\"],\n    \"additionalProperties\": false\n  }\n}\n"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        1072,
+        112
+      ],
+      "id": "7ce98e1a-cdac-47ee-b902-5849ecbae0a7",
+      "name": "Structured Output Parser1"
+    },
+    {
+      "parameters": {
+        "aggregate": "aggregateAllItemData",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        368,
+        352
+      ],
+      "id": "e2223ea0-9c06-4dae-a521-a3588fc3b131",
+      "name": "Aggregate"
+    },
+    {
+      "parameters": {
+        "schemaType": "manual",
+        "inputSchema": "{\n  \"$schema\": \"http://json-schema.org/draft-07/schema#\",\n  \"type\": \"object\",\n  \"properties\": {\n    \"report_title\": { \"type\": \"string\" },\n    \"report_link\": { \"type\": \"string\" }\n  },\n  \"required\": [\"report_title\", \"report_link\"],\n  \"additionalProperties\": false\n}\n"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        880,
+        528
+      ],
+      "id": "7be5b9fb-8cae-46a0-91c3-4b0500f1c1d3",
+      "name": "Structured Output Parser3"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Here is the issue details\n\nIssue ID - {{ $('Loop Over Items').item.json.json.issue_id }}\n\nCategory - {{ $('Loop Over Items').item.json.json.category }}\n\nDescription - {{ $('Loop Over Items').item.json.json.description }}\n\nSample values: {{ $('Loop Over Items').item.json.json.sample_values }}\n\nSuggestion: {{ $('Loop Over Items').item.json.json.suggestion }}\n\n",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "=You are an SQL Generator & Executor Agent, responsible for automatically fixing data\u2011quality issues in a PostgreSQL database.\n\n1\u00b7Input  \nReceive the following details as input:  \n \u2022\u202fissue_id     \n \u2022\u202fcategory       \n \u2022\u202fdescription     \n \u2022\u202fsample_data  \n \u2022\u202fsuggestion    \n\n2\u00b7Processing Steps  \n \u2022 **Analyze** the issue details.  \n \u2022 **Generate** a valid SQL statement (UPDATE or DELETE) to resolve it.  \n \u2022 **Execute** the SQL via the connected \u201cquery executor\u201d tool.  \n\n3\u00b7Output Contract  \nReturn exactly one JSON array\u2014no markdown, no code fences, no extra keys. Each element must be an object with **these keys in this order**:  \n 1. **issue_id**     (string) \u2014 echo the input value  \n 2. **status**       (string) \u2014 `\"resolved\"` if SQL ran successfully or `\"failed\"` on error  \n 3. **message**      (string, \u2264200 chars) \u2014 human\u2011readable outcome or error summary  \n 4. **executed_sql** (string) \u2014 the exact SQL you ran (even if it failed)  \n\n4\u00b7Response Rules  \n \u2022 Do **not** wrap the JSON array in any outer object.  \n \u2022 Do **not** include any commentary, backticks or markdown.  \n \u2022 If execution fails, set `status` to `\"failed\"`, include the error in `message`, and still return the attempted SQL in `executed_sql`.  \n \u2022 If execution succeeds, `message` should confirm the change (e.g., rows affected).  \n \u2022 Always include the original `issue_id`.  \n"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.1,
+      "position": [
+        784,
+        -112
+      ],
+      "id": "be6873e8-9915-492d-b085-0edcd7fcf273",
+      "name": "Data Issue Fixer Agent"
+    },
+    {
+      "parameters": {
+        "model": "llama-3.1-8b-instant",
+        "options": {
+          "maxTokens": 1500,
+          "temperature": 0.1
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGroq",
+      "typeVersion": 1,
+      "position": [
+        -1072,
+        304
+      ],
+      "id": "698a59e7-4dda-4bd6-b334-c1bf9712dc20",
+      "name": "Groq-Kimi-K2",
+      "credentials": {
+        "groqApi": {
+          "id": "jl4IjO6gS6kg0JC1",
+          "name": "Naveen - Groq API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        688,
+        112
+      ],
+      "id": "5e7722b0-c06f-485b-ba4f-d61ba4cb2a54",
+      "name": "Gemini-2.5-Flash",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "X9R1Ibeq3rA2Gemh",
+          "name": "HEM - Gemini"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        384,
+        528
+      ],
+      "id": "23c5180c-0ff7-4d77-b813-97258befc750",
+      "name": "Gemini-2.5-Flash1",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "X9R1Ibeq3rA2Gemh",
+          "name": "HEM - Gemini"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "descriptionType": "manual",
+        "toolDescription": "Use this tool to create a new Google Docs",
+        "folderId": "1gOOJvm8EvLDAyOrmSvn6VYmIuog7A38F",
+        "title": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Title', ``, 'string') }}"
+      },
+      "type": "n8n-nodes-base.googleDocsTool",
+      "typeVersion": 2,
+      "position": [
+        496,
+        592
+      ],
+      "id": "c606f0e8-4877-4afa-b9c7-ecd7197ee233",
+      "name": "Create Google Docs",
+      "credentials": {
+        "googleDocsOAuth2Api": {
+          "id": "Iyqpz4QSe3ZKRAql",
+          "name": "Codebasicst Google Docs"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "descriptionType": "manual",
+        "toolDescription": "Use this tool to share the access of the document to everyone",
+        "operation": "share",
+        "fileId": {
+          "__rl": true,
+          "value": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('File', ``, 'string') }}",
+          "mode": "id"
+        },
+        "permissionsUi": {
+          "permissionsValues": {
+            "role": "reader",
+            "type": "anyone"
+          }
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDriveTool",
+      "typeVersion": 3,
+      "position": [
+        624,
+        560
+      ],
+      "id": "f0e839d7-753b-482d-b177-dcca4bd0b593",
+      "name": "Update Access",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "VaWgEQGi5KcmnR8T",
+          "name": "Codebasics Test Account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "descriptionType": "manual",
+        "toolDescription": "Use this tool update the content in the google docs",
+        "operation": "update",
+        "documentURL": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Doc_ID_or_URL', ``, 'string') }}",
+        "actionsUi": {
+          "actionFields": [
+            {
+              "action": "insert",
+              "text": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('actionFields0_Text', ``, 'string') }}"
+            },
+            {
+              "object": "footer",
+              "action": "create",
+              "insertSegment": "footer",
+              "segmentId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('actionFields1_Segment_ID', ``, 'string') }}",
+              "index": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('actionFields1_Index', ``, 'number') }}"
+            },
+            {
+              "object": "header",
+              "action": "create",
+              "insertSegment": "header",
+              "segmentId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('actionFields2_Segment_ID', ``, 'string') }}",
+              "index": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('actionFields2_Index', ``, 'number') }}"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.googleDocsTool",
+      "typeVersion": 2,
+      "position": [
+        768,
+        624
+      ],
+      "id": "ccb06e2d-0155-4b0e-9bf0-08dfad9e3e22",
+      "name": "Update Google Docs",
+      "credentials": {
+        "googleDocsOAuth2Api": {
+          "id": "Iyqpz4QSe3ZKRAql",
+          "name": "Codebasicst Google Docs"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "description": "Call this tool to execute the generated Postgres SQL query and get the data",
+        "workflowId": {
+          "__rl": true,
+          "value": "P8xLBRRw2OIW2hXQ",
+          "mode": "list",
+          "cachedResultName": "SQL Query executor"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "sql_query": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('sql_query', ``, 'string') }}"
+          },
+          "matchingColumns": [
+            "sql_query"
+          ],
+          "schema": [
+            {
+              "id": "sql_query",
+              "displayName": "sql_query",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.2,
+      "position": [
+        816,
+        128
+      ],
+      "id": "ed4d0ca1-4861-4ad1-b4ff-1db520ace245",
+      "name": "Query Tool"
+    },
+    {
+      "parameters": {
+        "descriptionType": "manual",
+        "toolDescription": "Use this tool to get the Table Schema details",
+        "operation": "executeQuery",
+        "query": "SELECT table_name, column_name, data_type\nFROM information_schema.columns\nWHERE table_schema = 'public'\n  AND table_name NOT LIKE 'pg_%'\nORDER BY table_name, ordinal_position\nLIMIT 60;",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.postgresTool",
+      "typeVersion": 2.6,
+      "position": [
+        944,
+        96
+      ],
+      "id": "a844dfd1-abb3-44ff-861e-528d8ea663d2",
+      "name": "Postgres Schema",
+      "credentials": {
+        "postgres": {
+          "id": "XuHak2tAttUCAT7t",
+          "name": "AtliQ Hardware's DB"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "description": "Call this tool to execute the generated Postgres SQL query and get the data",
+        "workflowId": {
+          "__rl": true,
+          "value": "P8xLBRRw2OIW2hXQ",
+          "mode": "list",
+          "cachedResultName": "SQL Query executor"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "sql_query": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('sql_query', ``, 'string') }}"
+          },
+          "matchingColumns": [
+            "sql_query"
+          ],
+          "schema": [
+            {
+              "id": "sql_query",
+              "displayName": "sql_query",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.2,
+      "position": [
+        -960,
+        224
+      ],
+      "id": "1f2a8cfa-b268-41f7-9593-599b2e665efb",
+      "name": "Query Tool1"
+    },
+    {
+      "parameters": {
+        "descriptionType": "manual",
+        "toolDescription": "Use this tool to get the Table Schema details",
+        "operation": "executeQuery",
+        "query": "SELECT table_name, column_name, data_type\nFROM information_schema.columns\nWHERE table_schema = 'public'\n  AND table_name NOT LIKE 'pg_%'\nORDER BY table_name, ordinal_position\nLIMIT 60;",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.postgresTool",
+      "typeVersion": 2.6,
+      "position": [
+        -848,
+        320
+      ],
+      "id": "59dccd61-65ae-43ff-b9a0-7fc06d3d0ea9",
+      "name": "Postgres_Schmea",
+      "alwaysOutputData": true,
+      "credentials": {
+        "postgres": {
+          "id": "XuHak2tAttUCAT7t",
+          "name": "AtliQ Hardware's DB"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "operation": "sendAndWait",
+        "sendTo": "approver@example.com",
+        "subject": "=Approval Needed \u2013 Data Quality Fix ({{ $json.json.issue_id }})",
+        "message": "=Team,\n\nWe\u2019ve detected a data\u2011quality issue in the AtliQ database:\n\nIssue ID - {{ $json.json.issue_id }}\n\nDescription - {{ $json.json.description }}\n\nSuggestion: {{ $json.json.suggestion }}\n\nWe plan to apply this fix via SQL. Please review and let us know if you approve so we can proceed.\n\nRegards,\nData Fixer",
+        "approvalOptions": {
+          "values": {
+            "approvalType": "double"
+          }
+        },
+        "options": {
+          "appendAttribution": true
+        }
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        368,
+        -128
+      ],
+      "id": "4ccc9a8c-a5aa-4e42-9b57-cdc702b86d63",
+      "name": "Send Approval Request and Wait",
+      "webhookId": "2597c8db-314e-4257-a6a1-9cbf07778c23",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "fH6MNEHIBEJOEtsz",
+          "name": "Codebasicst Gmail"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## #1 -  Investigate the Database and list down the issues \n",
+        "height": 544,
+        "width": 592,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -1136,
+        -80
+      ],
+      "id": "3a0c5a53-c7f2-4e6f-9312-838c93e4ce11",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "content": "## #2 - Fix the issues using SQL\n",
+        "height": 496,
+        "width": 880,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        304,
+        -224
+      ],
+      "id": "ef9a3592-894a-4044-9e7e-bca09b57c823",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "88539708-4ba7-4ea3-bedd-44d67f3b7075",
+              "leftValue": "={{ $json.data.approved }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        544,
+        -128
+      ],
+      "id": "7d8e78ab-f906-4e41-ad61-1723f0dd84ef",
+      "name": "Approved?"
+    },
+    {
+      "parameters": {
+        "content": "## #3 - Create a Report",
+        "height": 480,
+        "width": 768,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        304,
+        288
+      ],
+      "id": "13772371-4ca6-4ae0-9850-e909a299bdf3",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "operation": "sendAndWait",
+        "sendTo": "approver@example.com",
+        "subject": "=Data Quality Fixs - Need your 10 Mins",
+        "message": "=Team,\n\nWe\u2019ve identified {{ $('Can be fixed with SQL?').all().length }} data-quality issues in the AtliQ database that we plan to fix using SQL.\n\nWe'll share the list of issues along with the proposed changes. Once you review them, we\u2019ll move forward with the fixes based on your approval.\n\nIt\u2019ll take just 10 minutes of your time.\n\nWhen you're available, simply click the \"Yes\" button, and we\u2019ll send the issues one by one for your review.\n\nLooking forward to your confirmation.\n\nRegards,\nData Fixer",
+        "approvalOptions": {
+          "values": {
+            "approvalType": "double",
+            "approveLabel": "YES",
+            "disapproveLabel": "NO"
+          }
+        },
+        "options": {
+          "appendAttribution": true
+        }
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        -224,
+        16
+      ],
+      "id": "99713466-50c6-411c-bfc5-71598d652b24",
+      "name": "Send Approval Request and Wait1",
+      "webhookId": "ad6f9ffa-d2f7-434b-b330-01afe3d66b4c",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "fH6MNEHIBEJOEtsz",
+          "name": "Codebasicst Gmail"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "009557b2-3359-4095-b34c-89cc4581687e",
+              "leftValue": "={{ $json.data.approved }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -416,
+        240
+      ],
+      "id": "59d24b72-c3a7-49de-94a3-da8227394c31",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "41c08f5f-0ac6-4cab-a1f3-32f690336e58",
+              "name": "issue_itmes",
+              "value": "={{ $('Can be fixed with SQL?').all() }}",
+              "type": "array"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -208,
+        224
+      ],
+      "id": "14e252c3-b5fb-4450-859b-8cd595da50ae",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "issue_itmes",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        16,
+        96
+      ],
+      "id": "39a8e0d2-7486-4084-8bdf-cd204a9a881c",
+      "name": "Split Out1"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "830bebba-f255-4b37-a7fb-775ca758a770",
+              "leftValue": "={{ $json.category }}",
+              "rightValue": "Fixable with SQL",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2.2,
+      "position": [
+        -432,
+        16
+      ],
+      "id": "001df313-bef4-461a-8a8a-52dba52084f8",
+      "name": "Can be fixed with SQL?"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        -192,
+        416
+      ],
+      "id": "eecfcf97-7684-45e1-b9b8-833ca282704d",
+      "name": "No Operation, do nothing"
+    },
+    {
+      "parameters": {
+        "content": "## Waiting for the Approver's time\n",
+        "height": 656,
+        "width": 624
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -480,
+        -80
+      ],
+      "id": "8b4f0fd1-c330-4ad0-acfa-c7349c0dfa8c",
+      "name": "Sticky Note3"
+    },
+    {
+      "parameters": {
+        "sendTo": "approver@example.com",
+        "subject": "=AtliQ {{ $json.output.report_title }}",
+        "emailType": "text",
+        "message": "=Team,\n\nWe have completed the Health Check of our AtliQ DB.\n\nAnd you can find the comprehensive report with further details in this document - {{ $json.output.report_link }}\n\nRegards,\nData Checker Reporting Bot",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        912,
+        352
+      ],
+      "id": "d97ae0fc-f31a-4494-bf8f-d68027b7c2af",
+      "name": "Send a message",
+      "webhookId": "6c0d27bf-b546-475e-a444-4da8c4d9ae7d",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "fH6MNEHIBEJOEtsz",
+          "name": "Codebasicst Gmail"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "Run a full data\u2011quality audit on the connected PostgreSQL database.",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "You are Master Data Health Checker for PostgreSQL.\nScan the database schema to detect data quality anomalies (NULLs in keys, placeholder tokens like UNKNOWN/'-', mixed formats, unit suffixes, orphan foreign keys, duplicates).\n\nOutput Contract (Strict JSON array only):\n[\n  {\n    \"issue_id\": \"ISSUE-001\",\n    \"category\": \"Fixable with SQL\",\n    \"description\": \"Concise summary under 200 chars\",\n    \"sample_values\": [\"sample1\", \"sample2\"],\n    \"suggestion\": \"Proposed remediation under 200 chars\"\n  }\n]\nCategories must be either \"Fixable with SQL\" or \"Needs Policy Establishment\".\nIf no issues found, return []. JSON array only, no markdown.",
+          "maxIterations": 5,
+          "batching": {
+            "delayBetweenBatches": 6000
+          }
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2,
+      "position": [
+        -1056,
+        16
+      ],
+      "id": "d928fc77-3eec-43ba-b3fd-e1ed41a7e261",
+      "name": "Master Data Investigator Agent",
+      "retryOnFail": true,
+      "waitBetweenTries": 5000
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.toJsonString() }}",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "=You are the Data Health\u202fReporter Agent, tasked with creating and delivering a polished database health\u2011check report via Google Docs and Drive.\n\n\ud83d\udce5 Input:\n\nReceive exactly one JSON object (no wrappers) with a top\u2011level key `\"data\"` whose value is an array of issue objects. Each issue object includes:\n\n- `issue_id`\n- `category` \n- `description` \n- `sample_values`\n- `suggestion`\n- _optional_ `output`\n\n\ud83d\udee0\ufe0f Tasks:\n\nSummarize the overall health of the database:\n\nTotal number of issues\n\nHow many are marked as resolved (status == \"resolved\")\n\nHow many require discussion\n\n<br>\nDraft report content with the following sections:\n\nTitle:\n\u201cDatabase Health Check Report \u2013\u00a0{{$now.format('yyyy-MM-dd')}}\u201d\n\nExecutive Summary:\nA one-sentence overview of the overall data quality status\n\nFixed Issues:\nBullet-point each resolved issue. Include:\n\nissue_id\n\ndescription\n\nexecuted_sql\n\n<br> Add **one line space after each bullet point**. Add **one line above and below the SQL query** if `executed_sql` is shown. <br>\nDiscussion Items:\nBullet-point each issue requiring discussion. Include:\n\nissue_id\n\ndescription\n\nsuggestion\n\n<br> Add **one line space after each bullet point**.\nCreate a new Google Doc using the Google Docs tool.\nFormat the report using clear section headings, proper spacing, and bullet lists for issue details.\n\nShare the document using the Google Drive tool.\nSet permissions to: \u201canyone with the link can view.\u201d\n\n\ud83d\udcdd Google Docs Report Structure:\n\nTitle (bold, centered, 16 pt)\n\nExecutive Summary (12 pt, single paragraph)\n\nFixed Issues (Heading \u2013 14 pt, bullets \u2013 11 pt)\n\nNot Fixed Issues (Heading \u2013 14 pt, bullets \u2013 11 pt) \u2014 only include if any\n\nDiscussion Items (Heading \u2013 14 pt, bullets \u2013 11 pt)\n\nEnsure:\n\nOne blank line after each bullet point\n\nSQL queries (if shown) are padded with one blank line above and below\n\n\ud83d\udce4 Output Requirements:\n\nReturn exactly one JSON object (no markdown, no code fences, no extra keys) with:\n\n```json\n{\n  \"report_title\": \"<Google Doc title>\",\n  \"report_link\":  \"<publicly shareable URL>\"\n}\n\n\n\u26a0\ufe0f Final Output Rules:\nThe response must be a JSON array only\n\nIt must start with [ and end with ]\n\nDo not wrap in {}, \"text\":, or code blocks (e.g., no ````json```)\n\nOutput must be compatible with downstream strict schema validation\n"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.1,
+      "position": [
+        544,
+        352
+      ],
+      "id": "300de1c1-d2ee-47df-b30c-dd00f2520a64",
+      "name": "Data Investigation Reporter"
+    },
+    {
+      "parameters": {
+        "content": "[![Codebasics Logo](https://files.codebasics.io/v3/images/sticky-logo.svg)](https://codebasics.io/) \n### AI Automation for Data Professionals Course \n",
+        "height": 192,
+        "width": 192,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        976,
+        -448
+      ],
+      "typeVersion": 1,
+      "id": "e87b5d44-7b9f-4bc0-a733-12722e5dc30e",
+      "name": "Sticky Note4"
+    },
+    {
+      "parameters": {
+        "path": "upload-dataset",
+        "formTitle": "AI Data Governor \u2014 Upload Raw Dataset",
+        "formDescription": "Upload a CSV or Excel file. The system will auto-infer schema, create target PostgreSQL tables, batch-load records, and initiate the autonomous multi-agent audit.",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "Dataset File (CSV / Excel)",
+              "fieldType": "file",
+              "requiredField": true,
+              "multipleFiles": false
+            },
+            {
+              "fieldLabel": "Custom Table Name (Optional)",
+              "fieldType": "string",
+              "placeholder": "e.g. fact_sales_monthly (leave blank to infer from file name)"
+            }
+          ]
+        },
+        "options": {
+          "path": "upload-dataset"
+        }
+      },
+      "type": "n8n-nodes-base.formTrigger",
+      "typeVersion": 2.2,
+      "position": [
+        -1600,
+        -250
+      ],
+      "id": "f001-form-trigger-upload-dataset",
+      "name": "Upload Dataset (Drag & Drop Form)",
+      "webhookId": "upload-dataset"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Dynamic Schema Inference & DDL Generator (AI Data Governor)\nconst binaryData = $input.first().binary;\nconst fileKey = Object.keys(binaryData)[0];\nconst fileObj = binaryData[fileKey];\nconst fileName = fileObj.fileName || 'uploaded_data.csv';\n\n// Read text from binary\nconst buffer = Buffer.from(fileObj.data, 'base64');\nconst csvText = buffer.toString('utf-8');\n\nfunction sanitize(raw) {\n  if (!raw) return 'col_unnamed';\n  let col = raw.trim().toLowerCase().replace(/[^a-z0-9_]+/g, '_').replace(/^_+|_+$/g, '');\n  if (/^[0-9]/.test(col)) col = 'col_' + col;\n  return col || 'col_unnamed';\n}\n\nconst lines = csvText.split(/\\r?\\n/).filter(l => l.trim() !== '');\nconst rawHeaders = lines[0].split(',').map(h => h.replace(/^\"|\"$/g, '').trim());\nconst cleanCols = rawHeaders.map(h => sanitize(h));\n\n// Custom or inferred table name\nconst customTable = $input.first().json['Custom Table Name (Optional)'];\nlet tableName = (customTable && customTable.trim()) ? sanitize(customTable) : sanitize(fileName.replace(/\\.[^/.]+$/, ''));\n\n// Sample first 100 rows for types\nconst colTypes = cleanCols.map(() => 'TEXT'); // Resilient TEXT type for dirty data load\nconst ddl = `CREATE TABLE IF NOT EXISTS \"${tableName}\" (\\n` + \n  cleanCols.map(c => `  \"${c}\" TEXT`).join(',\\n') + \n  `\\n);`;\n\n// Format rows for batch insert\nconst rows = [];\nfor (let i = 1; i < lines.length; i++) {\n  const parts = lines[i].split(',').map(v => v.replace(/^\"|\"$/g, '').trim());\n  if (parts.length === rawHeaders.length) {\n    const rowObj = {};\n    for (let j = 0; j < cleanCols.length; j++) {\n      rowObj[cleanCols[j]] = parts[j] === '' || parts[j].toUpperCase() === 'NULL' ? null : parts[j];\n    }\n    rows.push(rowObj);\n  }\n}\n\nreturn [{\n  json: {\n    table_name: tableName,\n    create_table_ddl: ddl,\n    total_records: rows.length,\n    columns: cleanCols,\n    rows_sample: rows.slice(0, 5)\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -1350,
+        -250
+      ],
+      "id": "f002-dynamic-schema-inference",
+      "name": "Dynamic Schema Inference"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "={{ $json.create_table_ddl }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.5,
+      "position": [
+        -1100,
+        -250
+      ],
+      "id": "f003-postgres-auto-create-table",
+      "name": "Auto-Create Target Table (Postgres)",
+      "credentials": {
+        "postgres": {
+          "id": "postgres-cred-id",
+          "name": "Postgres (Supabase)"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Zero-SQL Drag-and-Drop Ingestion Path\nAccepts CSV/Excel uploads via Form Trigger, infers schema on the fly, auto-creates target PostgreSQL table, and initiates the multi-agent audit without touching Supabase SQL editor.",
+        "height": 380,
+        "width": 780,
+        "color": 6
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -1650,
+        -380
+      ],
+      "id": "f004-sticky-note-dynamic-ingest",
+      "name": "Sticky Note: Dynamic Ingestion"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking \u2018Execute workflow\u2019": {
+      "main": [
+        [
+          {
+            "node": "Master Data Investigator Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Out": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Can be fixed with SQL?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser2": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Master Data Investigator Agent",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ],
+        [
+          {
+            "node": "Send Approval Request and Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser1": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Data Issue Fixer Agent",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "Aggregate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate": {
+      "main": [
+        [
+          {
+            "node": "Data Investigation Reporter",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser3": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Data Investigation Reporter",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Data Issue Fixer Agent": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Groq-Kimi-K2": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Master Data Investigator Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gemini-2.5-Flash": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Data Issue Fixer Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gemini-2.5-Flash1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Data Investigation Reporter",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Google Docs": {
+      "ai_tool": [
+        [
+          {
+            "node": "Data Investigation Reporter",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update Access": {
+      "ai_tool": [
+        [
+          {
+            "node": "Data Investigation Reporter",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update Google Docs": {
+      "ai_tool": [
+        [
+          {
+            "node": "Data Investigation Reporter",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Query Tool": {
+      "ai_tool": [
+        [
+          {
+            "node": "Data Issue Fixer Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Postgres Schema": {
+      "ai_tool": [
+        [
+          {
+            "node": "Data Issue Fixer Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Query Tool1": {
+      "ai_tool": [
+        [
+          {
+            "node": "Master Data Investigator Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Postgres_Schmea": {
+      "ai_tool": [
+        [
+          {
+            "node": "Master Data Investigator Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Approval Request and Wait": {
+      "main": [
+        [
+          {
+            "node": "Approved?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Approved?": {
+      "main": [
+        [
+          {
+            "node": "Data Issue Fixer Agent",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        []
+      ]
+    },
+    "Send Approval Request and Wait1": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "No Operation, do nothing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Split Out1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Out1": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Can be fixed with SQL?": {
+      "main": [
+        [
+          {
+            "node": "Send Approval Request and Wait1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Master Data Investigator Agent": {
+      "main": [
+        [
+          {
+            "node": "Split Out",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Data Investigation Reporter": {
+      "main": [
+        [
+          {
+            "node": "Send a message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Upload Dataset (Drag & Drop Form)": {
+      "main": [
+        [
+          {
+            "node": "Dynamic Schema Inference",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Dynamic Schema Inference": {
+      "main": [
+        [
+          {
+            "node": "Auto-Create Target Table (Postgres)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Auto-Create Target Table (Postgres)": {
+      "main": [
+        [
+          {
+            "node": "Master Data Investigator Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "b04e4a1d-86ed-4e9c-8404-d60fd7d2a3c5",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "d1d833666fe269ef7aed66a02c83537ae536c231b1e33873d69bca85017b98d8"
+  },
+  "id": "jZnNKapxRm9XwYsC",
+  "tags": []
+}

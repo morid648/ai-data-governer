@@ -1,0 +1,43 @@
+customer,market,platform,channel,customer_code
+Amazon,India,Brick & Mortar,Direct,90000001
+Amazon ,USA,E-Commerce,Direct,90000002
+Atliq Exclusive,Germany,Brick & Mortar,Retailer,90000003
+AltiQ Exclusive,UK,E-Commerce,Direct,90000004
+Flipkart,France,UNKNOWN,Direct,90000005
+Best Buy,Japan,E-Commerce,Retailer,90000006
+Walmart,Australia,Brick & Mortar,Direct,90000007
+Target,Brazil,E-Commerce,Direct,90000008
+Costco,Norway,Brick & Mortar,Retailer,90000009
+Croma,Sweden,E-Commerce,Direct,90000010
+Reliance Digital,Singapore,Brick & Mortar,Direct,90000011
+Currys,UAE,,Retailer,90000012
+MediaMarkt,India,Brick & Mortar,Direct,90000013
+Boulanger,USA,E-Commerce,Direct,90000014
+Euronics,Germany,Brick & Mortar,Retailer,90000015
+Staples,UK,E-Commerce,Direct,90000016
+Office Depot,France,Brick & Mortar,Direct,90000017
+,Japan,E-Commerce,Retailer,90000018
+John Lewis,Australia,Brick & Mortar,Direct,90000019
+Fnac,Brazil,E-Commerce,Direct,90000020
+Amazon,Norway,Brick & Mortar,Retailer,90000021
+Amazon ,Sweden,E-Commerce,Direct,90000022
+Atliq Exclusive,Singapore,Brick & Mortar,Direct,90000023
+AltiQ Exclusive,UAE,E-Commerce,Retailer,90000024
+Flipkart,India,Brick & Mortar,Direct,90000025
+Best Buy,USA,E-Commerce,Direct,90000026
+Walmart,Germany,Brick & Mortar,Retailer,90000027
+Target,UK,E-Commerce,Direct,90000028
+Costco,France,Brick & Mortar,Direct,90000029
+Croma,Japan,E-Commerce,Retailer,90000030
+Reliance Digital,Australia,Brick & Mortar,Direct,90000031
+Currys,Brazil,E-Commerce,Direct,90000032
+MediaMarkt,Norway,Brick & Mortar,Retailer,90000033
+Boulanger,Sweden,E-Commerce,Direct,90000034
+Euronics,Singapore,Brick & Mortar,Direct,90000035
+Staples,UAE,E-Commerce,Retailer,90000036
+Office Depot,India,Brick & Mortar,Direct,90000037
+Argos,USA,E-Commerce,Direct,90000038
+John Lewis,Germany,Brick & Mortar,Retailer,90000039
+Fnac,UK,E-Commerce,Direct,90000040
+Amazon,India,Brick & Mortar,Direct,90000001
+Atliq Exclusive,Germany,Brick & Mortar,Retailer,90000003

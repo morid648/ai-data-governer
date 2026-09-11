@@ -1,0 +1,29 @@
+market,sub_zone,region
+China,ROA,APAC
+India,India,APAC
+Indonesia,ROA,APAC
+Japan,ROA,APAC
+Pakistan,,APAC
+Philiphines,ROA,APAC
+South Korea,ROA,APAC
+Australia,ANZ,APAC
+Newzealand,ANZ,APAC
+Bangladesh,ROA,apac
+France,SE,eu
+Germany,NE,EU
+Italy,SE,EU
+Netherlands,NE,EU
+Norway,NE,EU
+Poland,NE,EU
+Portugal,SE,EU
+Spain,SE,EU
+Sweden,NE,EU
+Austria,NE,EU
+United Kingdom,NE,EU
+USA,nan,nan
+Unknown,nan,nan
+Chile,LATAM,LATAM
+Columbia,LATAM,LATAM
+Mexico,LATAM,LATAM
+Brazil,LATAM,latam
+United Kingdom,NE,EU

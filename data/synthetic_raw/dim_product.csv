@@ -1,0 +1,16 @@
+product_code,division,segment,category,product,variant
+P101,Peripherals,Internal,Storage,AQ NVMe SSD,1TB
+P102,Peripherals,Internal,Storage,AQ SATA SSD,500GB
+P103,Peripherals,Internal,Memory,AQ DDR4 RAM,16GB
+P104,Peripherals,Internal,Memory,AQ DDR5 RAM,32GB
+P105,Peripherals,Audio,Headphones,AQ Bass Master,Wireless
+P106,Peripherals,Audio,Headphones,AQ Studio Pro,Wired
+P107,Peripherals,Accessories,Mouse,AQ Gaming Mouse,RGB
+P108,Peripherals,Accessories,Keyboard,AQ Mech Keyboard,Blue Switch
+P109,PC,Desktop,Custom PC,AQ Titan Gaming,RTX4080
+P110,PC,Notebook,Ultrabook,AQ SlimBook 14,i7 16GB
+P111,Peripherals,Internal,UNKNOWN,AQ Generic Fan,120mm
+P112,Peripherals,Internal,-,AQ RGB Strip,1m
+P113,Peripherals,Accessories,,AQ Mousepad,XL
+P114,Peripherals,Accessories,Mouse,AQ Wireless Mouse,
+P101,Peripherals,Internal,Storage,AQ NVMe SSD,1TB

@@ -1,0 +1,516 @@
+date,division,category,product_code,product,market,platform,channel,customer_code,customer_name,forecast_quantity
+2024-06-01,Peripherals,Storage,P102,AQ SATA SSD,Canada,E-Commerce,Direct,ZZZ5506,,127
+2024-02-01,Peripherals,-,P112,AQ RGB Strip,Australia,Brick & Mortar,Direct,90000007,Walmart,358
+2024-01-01,PC,Ultrabook,P110,AQ SlimBook 14,UK,E-Commerce,Direct,90000028,Target,11
+2024-01-01,Peripherals,Memory,P104,AQ DDR5 RAM,Germany,Brick & Mortar,Retailer,90000015,Euronics,272 units
+2024-01-01,PC,Custom PC,P109,AQ Titan Gaming,India,Brick & Mortar,Direct,90000013,MediaMarkt,381
+2024-06-01,PC,Custom PC,P109,AQ Titan Gaming,Germany,Brick & Mortar,Retailer,90000027,Walmart,121
+2024-05-01,Peripherals,Headphones,P105,AQ Bass Master,India,Brick & Mortar,Direct,90000001,Amazon,388
+2024-06-01,Peripherals,Mouse,P107,AQ Gaming Mouse,Sweden,E-Commerce,Direct,90000022,Amazon ,141
+2024-02-01,Peripherals,,P113,AQ Mousepad,Sweden,E-Commerce,Direct,90000022,Amazon ,49
+2024-04-01,Peripherals,Storage,P102,AQ SATA SSD,Singapore,Brick & Mortar,Direct,90000023,Atliq Exclusive,439
+2024-05-01,Peripherals,Headphones,P105,AQ Bass Master,Germany,Brick & Mortar,Retailer,ZZZ8527,,272
+2024-04-01,Peripherals,Storage,P102,AQ SATA SSD,UAE,E-Commerce,Retailer,90000036,Staples,165
+2024-05-01,Peripherals,Storage,P101,AQ NVMe SSD,UAE,E-Commerce,Retailer,90000024,AltiQ Exclusive,296
+2024-06-01,Peripherals,Storage,P102,AQ SATA SSD,Germany,Brick & Mortar,Retailer,90000003,Atliq Exclusive,340 units
+2024-03-01,Peripherals,Storage,P102,AQ SATA SSD,Germany,Brick & Mortar,Retailer,90000015,Euronics,441
+2024-04-01,Peripherals,Headphones,P105,AQ Bass Master,Japan,E-Commerce,Retailer,90000030,Croma,331
+2024-02-01,Peripherals,Headphones,P106,AQ Studio Pro,Singapore,Brick & Mortar,Direct,90000023,Atliq Exclusive,110
+2024-06-01,Peripherals,Storage,P101,AQ NVMe SSD,Germany,Brick & Mortar,Retailer,90000003,Atliq Exclusive,50
+2024-06-01,Peripherals,Memory,P103,AQ DDR4 RAM,Singapore,Brick & Mortar,Direct,90000035,Euronics,375
+2024-02-01,Peripherals,Keyboard,P108,AQ Mech Keyboard,India,Brick & Mortar,Direct,90000025,Flipkart,153
+2024-06-01,PC,Custom PC,P109,AQ Titan Gaming,Germany,Brick & Mortar,Retailer,ZZZ6313,,427
+2024-02-01,Peripherals,Mouse,P114,AQ Wireless Mouse,Germany,Brick & Mortar,Retailer,90000003,Atliq Exclusive,417
+2024-04-01,Peripherals,Headphones,P105,AQ Bass Master,France,UNKNOWN,Direct,90000005,Flipkart,121
+2024-06-01,Peripherals,Headphones,P106,AQ Studio Pro,USA,E-Commerce,Direct,90000014,Boulanger,345 units
+2024-04-01,Peripherals,Storage,P101,AQ NVMe SSD,Germany,Brick & Mortar,Retailer,90000003,Atliq Exclusive,233
+2024-03-01,Peripherals,Memory,P103,AQ DDR4 RAM,Canada,E-Commerce,Direct,90000016,Staples,393
+2024-05-01,Peripherals,Headphones,P105,AQ Bass Master,USA,E-Commerce,Direct,90000038,Argos,232
+2024-04-01,Peripherals,Headphones,P106,AQ Studio Pro,Germany,Brick & Mortar,Retailer,90000015,Euronics,81
+2024-04-01,Peripherals,Storage,P102,AQ SATA SSD,UK,E-Commerce,Direct,90000004,AltiQ Exclusive,438
+2024-02-01,Peripherals,UNKNOWN,P111,AQ Generic Fan,Singapore,Brick & Mortar,Direct,90000011,Reliance Digital,413
+2024-05-01,Peripherals,Storage,P102,AQ SATA SSD,India,Brick & Mortar,Direct,ZZZ7252,,314
+2024-05-01,Peripherals,Headphones,P105,AQ Bass Master,UAE,E-Commerce,Retailer,90000036,Staples,435
+2024-06-01,Peripherals,-,P112,AQ RGB Strip,Brazil,E-Commerce,Direct,90000008,Target,361
+2024-03-01,Peripherals,,P113,AQ Mousepad,Germany,Brick & Mortar,Retailer,90000003,Atliq Exclusive,172 units
+2024-03-01,Peripherals,Mouse,P107,AQ Gaming Mouse,Singapore,Brick & Mortar,Direct,90000011,Reliance Digital,227
+2024-06-01,Peripherals,Storage,P101,AQ NVMe SSD,France,Brick & Mortar,Direct,90000017,Office Depot,256
+2024-05-01,Peripherals,Storage,P101,AQ NVMe SSD,Australia,Brick & Mortar,Direct,90000007,Walmart,460
+2024-03-01,Peripherals,Mouse,P114,AQ Wireless Mouse,India,Brick & Mortar,Direct,90000001,Amazon,273
+2024-02-01,Peripherals,Memory,P103,AQ DDR4 RAM,UAE,E-Commerce,Retailer,90000024,AltiQ Exclusive,390
+2024-05-01,Peripherals,,P113,AQ Mousepad,Sweden,E-Commerce,Direct,90000034,Boulanger,465
+2024-05-01,Peripherals,Headphones,P106,AQ Studio Pro,Brazil,E-Commerce,Direct,ZZZ1319,,63
+2024-03-01,Peripherals,Memory,P104,AQ DDR5 RAM,UK,E-Commerce,Direct,90000004,AltiQ Exclusive,136
+2024-01-01,Peripherals,Storage,P102,AQ SATA SSD,Brazil,E-Commerce,Direct,90000032,Currys,414
+2024-05-01,Peripherals,,P113,AQ Mousepad,Norway,Brick & Mortar,Retailer,90000009,Costco,75 units
+2024-05-01,Peripherals,Memory,P103,AQ DDR4 RAM,France,Brick & Mortar,Direct,90000017,Office Depot,284
+2024-04-01,Peripherals,Memory,P104,AQ DDR5 RAM,Singapore,Brick & Mortar,Direct,90000035,Euronics,387
+2024-06-01,Peripherals,Headphones,P105,AQ Bass Master,USA,E-Commerce,Direct,90000026,Best Buy,358
+2024-03-01,Peripherals,Keyboard,P108,AQ Mech Keyboard,Sweden,E-Commerce,Direct,90000034,Boulanger,229
+2024-02-01,Peripherals,Memory,P104,AQ DDR5 RAM,France,UNKNOWN,Direct,90000005,Flipkart,168
+2024-05-01,PC,Custom PC,P109,AQ Titan Gaming,Germany,Brick & Mortar,Retailer,90000015,Euronics,303
+2024-01-01,Peripherals,Storage,P102,AQ SATA SSD,Canada,Brick & Mortar,Direct,ZZZ1964,,114
+2024-01-01,Peripherals,Mouse,P114,AQ Wireless Mouse,Sweden,E-Commerce,Direct,90000022,Amazon ,47
+2024-02-01,Peripherals,Headphones,P105,AQ Bass Master,Brazil,E-Commerce,Direct,90000032,Currys,121
+2024-02-01,Peripherals,-,P112,AQ RGB Strip,India,Brick & Mortar,Direct,90000037,Office Depot,305 units
+2024-02-01,Peripherals,,P113,AQ Mousepad,Australia,Brick & Mortar,Direct,90000031,Reliance Digital,421
+2024-02-01,Peripherals,Storage,P102,AQ SATA SSD,Australia,Brick & Mortar,Direct,90000007,Walmart,345
+2024-03-01,Peripherals,Mouse,P107,AQ Gaming Mouse,Germany,Brick & Mortar,Retailer,90000027,Walmart,235
+2024-06-01,Peripherals,UNKNOWN,P111,AQ Generic Fan,Germany,Brick & Mortar,Retailer,90000003,Atliq Exclusive,46
+2024-04-01,Peripherals,-,P112,AQ RGB Strip,Sweden,E-Commerce,Direct,90000022,Amazon ,407
+2024-02-01,Peripherals,Memory,P104,AQ DDR5 RAM,India,Brick & Mortar,Direct,90000013,MediaMarkt,283
+2024-02-01,Peripherals,Mouse,P107,AQ Gaming Mouse,UAE,,Retailer,ZZZ5563,,238
+2024-01-01,Peripherals,Keyboard,P108,AQ Mech Keyboard,UAE,E-Commerce,Retailer,90000036,Staples,46
+2024-06-01,PC,Custom PC,P109,AQ Titan Gaming,India,Brick & Mortar,Direct,90000001,Amazon,49
+2024-02-01,Peripherals,Mouse,P107,AQ Gaming Mouse,Brazil,E-Commerce,Direct,90000032,Currys,247 units
+2024-04-01,Peripherals,Storage,P101,AQ NVMe SSD,UK,E-Commerce,Direct,90000004,AltiQ Exclusive,91
+2024-01-01,Peripherals,Mouse,P107,AQ Gaming Mouse,France,Brick & Mortar,Direct,90000017,Office Depot,483
+2024-03-01,Peripherals,Mouse,P107,AQ Gaming Mouse,UAE,E-Commerce,Retailer,90000036,Staples,348
+2024-02-01,Peripherals,Memory,P104,AQ DDR5 RAM,Australia,Brick & Mortar,Direct,90000019,John Lewis,107
+2024-05-01,Peripherals,-,P112,AQ RGB Strip,Singapore,Brick & Mortar,Direct,90000035,Euronics,36
+2024-01-01,Peripherals,Storage,P101,AQ NVMe SSD,USA,E-Commerce,Direct,90000038,Argos,255
+2024-05-01,Peripherals,Memory,P103,AQ DDR4 RAM,UK,E-Commerce,Direct,ZZZ9320,,41
+2024-01-01,PC,Ultrabook,P110,AQ SlimBook 14,France,UNKNOWN,Direct,90000005,Flipkart,347
+2024-04-01,Peripherals,Storage,P102,AQ SATA SSD,India,Brick & Mortar,Direct,90000037,Office Depot,139
+2024-05-01,Peripherals,Storage,P101,AQ NVMe SSD,UK,E-Commerce,Direct,90000040,Fnac,49 units
+2024-06-01,PC,Ultrabook,P110,AQ SlimBook 14,India,Brick & Mortar,Direct,90000037,Office Depot,272
+2024-03-01,Peripherals,Memory,P104,AQ DDR5 RAM,Canada,Brick & Mortar,Retailer,90000021,Amazon,125
+2024-04-01,Peripherals,Memory,P103,AQ DDR4 RAM,Germany,Brick & Mortar,Retailer,90000003,Atliq Exclusive,162
+2024-03-01,Peripherals,Storage,P101,AQ NVMe SSD,France,UNKNOWN,Direct,90000005,Flipkart,13
+2024-05-01,PC,Ultrabook,P110,AQ SlimBook 14,Australia,Brick & Mortar,Direct,90000007,Walmart,49
+2024-02-01,PC,Custom PC,P109,AQ Titan Gaming,France,Brick & Mortar,Direct,90000017,Office Depot,73
+2024-01-01,Peripherals,Storage,P101,AQ NVMe SSD,UK,E-Commerce,Direct,ZZZ7054,,145
+2024-04-01,Peripherals,Mouse,P114,AQ Wireless Mouse,Singapore,Brick & Mortar,Direct,90000035,Euronics,364
+2024-05-01,Peripherals,,P113,AQ Mousepad,Germany,Brick & Mortar,Retailer,90000003,Atliq Exclusive,265
+2024-06-01,Peripherals,Mouse,P114,AQ Wireless Mouse,UAE,E-Commerce,Retailer,90000036,Staples,151 units
+2024-02-01,Peripherals,Headphones,P105,AQ Bass Master,Brazil,E-Commerce,Direct,90000008,Target,453
+2024-06-01,PC,Custom PC,P109,AQ Titan Gaming,Sweden,E-Commerce,Direct,90000010,Croma,143
+2024-05-01,Peripherals,Memory,P104,AQ DDR5 RAM,Sweden,E-Commerce,Direct,90000022,Amazon ,119
+2024-03-01,PC,Custom PC,P109,AQ Titan Gaming,Brazil,E-Commerce,Direct,90000032,Currys,124
+2024-01-01,Peripherals,UNKNOWN,P111,AQ Generic Fan,UK,E-Commerce,Direct,90000028,Target,427
+2024-01-01,Peripherals,Storage,P101,AQ NVMe SSD,Sweden,E-Commerce,Direct,90000022,Amazon ,393
+2024-06-01,Peripherals,Headphones,P105,AQ Bass Master,Singapore,Brick & Mortar,Direct,ZZZ8239,,290
+2024-05-01,Peripherals,Storage,P101,AQ NVMe SSD,Brazil,E-Commerce,Direct,90000008,Target,37
+2024-05-01,Peripherals,Storage,P101,AQ NVMe SSD,UAE,E-Commerce,Retailer,90000024,AltiQ Exclusive,310
+2024-02-01,Peripherals,Mouse,P107,AQ Gaming Mouse,Norway,Brick & Mortar,Retailer,90000009,Costco,25 units
+2024-03-01,Peripherals,Storage,P101,AQ NVMe SSD,Germany,Brick & Mortar,Retailer,90000003,Atliq Exclusive,466
+2024-02-01,Peripherals,UNKNOWN,P111,AQ Generic Fan,UK,E-Commerce,Direct,90000016,Staples,339
+2024-03-01,Peripherals,,P113,AQ Mousepad,UAE,E-Commerce,Retailer,90000036,Staples,460
+2024-05-01,Peripherals,-,P112,AQ RGB Strip,Sweden,E-Commerce,Direct,90000010,Croma,475
+2024-02-01,Peripherals,,P113,AQ Mousepad,UAE,,Retailer,90000012,Currys,459
+2024-01-01,Peripherals,Memory,P103,AQ DDR4 RAM,Sweden,E-Commerce,Direct,90000022,Amazon ,408
+2024-06-01,Peripherals,Mouse,P114,AQ Wireless Mouse,Canada,E-Commerce,Direct,ZZZ5371,,79
+2024-04-01,Peripherals,Mouse,P114,AQ Wireless Mouse,Germany,Brick & Mortar,Retailer,90000003,Atliq Exclusive,449
+2024-02-01,Peripherals,Memory,P104,AQ DDR5 RAM,Japan,E-Commerce,Retailer,90000030,Croma,183
+2024-02-01,Peripherals,Memory,P104,AQ DDR5 RAM,USA,E-Commerce,Direct,90000002,Amazon ,338 units
+2024-04-01,Peripherals,Headphones,P106,AQ Studio Pro,Japan,E-Commerce,Retailer,90000018,,439
+2024-03-01,Peripherals,Headphones,P106,AQ Studio Pro,Germany,Brick & Mortar,Retailer,90000003,Atliq Exclusive,267
+2024-06-01,Peripherals,Mouse,P114,AQ Wireless Mouse,Singapore,Brick & Mortar,Direct,90000035,Euronics,164
+2024-01-01,Peripherals,Storage,P101,AQ NVMe SSD,France,Brick & Mortar,Direct,90000017,Office Depot,104
+2024-03-01,Peripherals,Storage,P101,AQ NVMe SSD,Australia,Brick & Mortar,Direct,90000007,Walmart,313
+2024-03-01,Peripherals,-,P112,AQ RGB Strip,Norway,Brick & Mortar,Retailer,90000021,Amazon,237
+2024-05-01,Peripherals,Storage,P102,AQ SATA SSD,India,Brick & Mortar,Direct,ZZZ4114,,126
+2024-06-01,Peripherals,Mouse,P107,AQ Gaming Mouse,India,Brick & Mortar,Direct,90000001,Amazon,278
+2024-06-01,Peripherals,-,P112,AQ RGB Strip,India,Brick & Mortar,Direct,90000013,MediaMarkt,194
+2024-01-01,Peripherals,UNKNOWN,P111,AQ Generic Fan,Sweden,E-Commerce,Direct,90000022,Amazon ,324 units
+2024-06-01,Peripherals,Mouse,P114,AQ Wireless Mouse,Brazil,E-Commerce,Direct,90000008,Target,372
+2024-05-01,Peripherals,Headphones,P105,AQ Bass Master,Germany,Brick & Mortar,Retailer,90000027,Walmart,174
+2024-06-01,Peripherals,Headphones,P105,AQ Bass Master,UAE,E-Commerce,Retailer,90000036,Staples,66
+2024-04-01,Peripherals,UNKNOWN,P111,AQ Generic Fan,India,Brick & Mortar,Direct,90000025,Flipkart,346
+2024-05-01,PC,Ultrabook,P110,AQ SlimBook 14,Brazil,E-Commerce,Direct,90000020,Fnac,219
+2024-01-01,Peripherals,Headphones,P105,AQ Bass Master,Australia,Brick & Mortar,Direct,90000019,John Lewis,115
+2024-05-01,PC,Ultrabook,P110,AQ SlimBook 14,Germany,Brick & Mortar,Retailer,ZZZ6279,,247
+2024-04-01,Peripherals,UNKNOWN,P111,AQ Generic Fan,USA,E-Commerce,Direct,90000014,Boulanger,271
+2024-06-01,Peripherals,Memory,P103,AQ DDR4 RAM,Japan,E-Commerce,Retailer,90000006,Best Buy,156
+2024-06-01,Peripherals,UNKNOWN,P111,AQ Generic Fan,UK,E-Commerce,Direct,90000040,Fnac,168 units
+2024-02-01,Peripherals,UNKNOWN,P111,AQ Generic Fan,Brazil,E-Commerce,Direct,90000020,Fnac,116
+2024-02-01,Peripherals,Storage,P101,AQ NVMe SSD,Canada,Brick & Mortar,Retailer,90000003,Atliq Exclusive,135
+2024-05-01,Peripherals,Mouse,P114,AQ Wireless Mouse,France,UNKNOWN,Direct,90000005,Flipkart,241
+2024-06-01,PC,Ultrabook,P110,AQ SlimBook 14,India,Brick & Mortar,Direct,90000013,MediaMarkt,374
+2024-04-01,Peripherals,Mouse,P107,AQ Gaming Mouse,UK,E-Commerce,Direct,90000016,Staples,90
+2024-06-01,Peripherals,Storage,P101,AQ NVMe SSD,Australia,Brick & Mortar,Direct,90000007,Walmart,406
+2024-02-01,Peripherals,Memory,P103,AQ DDR4 RAM,Sweden,E-Commerce,Direct,ZZZ8611,,37
+2024-02-01,Peripherals,Storage,P101,AQ NVMe SSD,Brazil,E-Commerce,Direct,90000008,Target,232
+2024-04-01,Peripherals,UNKNOWN,P111,AQ Generic Fan,Sweden,E-Commerce,Direct,90000034,Boulanger,300
+2024-03-01,Peripherals,,P113,AQ Mousepad,France,Brick & Mortar,Direct,90000029,Costco,324 units
+2024-04-01,Peripherals,Mouse,P114,AQ Wireless Mouse,UAE,E-Commerce,Retailer,90000036,Staples,228
+2024-06-01,Peripherals,Mouse,P114,AQ Wireless Mouse,Australia,Brick & Mortar,Direct,90000031,Reliance Digital,233
+2024-02-01,Peripherals,Mouse,P114,AQ Wireless Mouse,India,Brick & Mortar,Direct,90000001,Amazon,152
+2024-04-01,Peripherals,UNKNOWN,P111,AQ Generic Fan,UK,E-Commerce,Direct,90000016,Staples,149
+2024-01-01,Peripherals,-,P112,AQ RGB Strip,Australia,Brick & Mortar,Direct,90000019,John Lewis,123
+2024-03-01,Peripherals,Headphones,P106,AQ Studio Pro,Singapore,Brick & Mortar,Direct,90000035,Euronics,40
+2024-02-01,Peripherals,Memory,P104,AQ DDR5 RAM,India,Brick & Mortar,Direct,ZZZ3503,,362
+2024-01-01,Peripherals,Mouse,P107,AQ Gaming Mouse,Germany,Brick & Mortar,Retailer,90000027,Walmart,181
+2024-04-01,Peripherals,Mouse,P107,AQ Gaming Mouse,UK,E-Commerce,Direct,90000004,AltiQ Exclusive,113
+2024-04-01,Peripherals,Storage,P101,AQ NVMe SSD,USA,E-Commerce,Direct,90000038,Argos,479 units
+2024-05-01,Peripherals,Mouse,P107,AQ Gaming Mouse,Australia,Brick & Mortar,Direct,90000031,Reliance Digital,9
+2024-03-01,Peripherals,,P113,AQ Mousepad,India,Brick & Mortar,Direct,90000025,Flipkart,444
+2024-05-01,Peripherals,-,P112,AQ RGB Strip,Singapore,Brick & Mortar,Direct,90000035,Euronics,423
+2024-02-01,Peripherals,Keyboard,P108,AQ Mech Keyboard,Germany,Brick & Mortar,Retailer,90000015,Euronics,147
+2024-04-01,Peripherals,Storage,P101,AQ NVMe SSD,India,Brick & Mortar,Direct,90000025,Flipkart,179
+2024-06-01,Peripherals,Memory,P103,AQ DDR4 RAM,Japan,E-Commerce,Retailer,90000030,Croma,469
+2024-05-01,PC,Custom PC,P109,AQ Titan Gaming,Canada,E-Commerce,Direct,ZZZ7455,,316
+2024-06-01,Peripherals,Storage,P101,AQ NVMe SSD,Japan,E-Commerce,Retailer,90000006,Best Buy,337
+2024-02-01,Peripherals,Mouse,P114,AQ Wireless Mouse,Japan,E-Commerce,Retailer,90000030,Croma,89
+2024-03-01,Peripherals,Mouse,P107,AQ Gaming Mouse,Norway,Brick & Mortar,Retailer,90000021,Amazon,117 units
+2024-03-01,Peripherals,Headphones,P106,AQ Studio Pro,India,Brick & Mortar,Direct,90000025,Flipkart,150
+2024-03-01,Peripherals,Mouse,P114,AQ Wireless Mouse,Japan,E-Commerce,Retailer,90000006,Best Buy,235
+2024-06-01,PC,Custom PC,P109,AQ Titan Gaming,UK,E-Commerce,Direct,90000004,AltiQ Exclusive,493
+2024-02-01,Peripherals,UNKNOWN,P111,AQ Generic Fan,France,UNKNOWN,Direct,90000005,Flipkart,414
+2024-01-01,Peripherals,,P113,AQ Mousepad,USA,E-Commerce,Direct,90000002,Amazon ,488
+2024-02-01,Peripherals,Mouse,P114,AQ Wireless Mouse,USA,E-Commerce,Direct,90000002,Amazon ,317
+2024-02-01,Peripherals,Memory,P103,AQ DDR4 RAM,Australia,Brick & Mortar,Direct,ZZZ2874,,289
+2024-04-01,Peripherals,-,P112,AQ RGB Strip,France,Brick & Mortar,Direct,90000017,Office Depot,398
+2024-02-01,PC,Ultrabook,P110,AQ SlimBook 14,Germany,Brick & Mortar,Retailer,90000039,John Lewis,491
+2024-02-01,Peripherals,Headphones,P105,AQ Bass Master,Australia,Brick & Mortar,Direct,90000007,Walmart,291 units
+2024-03-01,PC,Ultrabook,P110,AQ SlimBook 14,India,Brick & Mortar,Direct,90000025,Flipkart,204
+2024-01-01,PC,Ultrabook,P110,AQ SlimBook 14,India,Brick & Mortar,Direct,90000001,Amazon,122
+2024-06-01,Peripherals,,P113,AQ Mousepad,Brazil,E-Commerce,Direct,90000020,Fnac,449
+2024-01-01,Peripherals,,P113,AQ Mousepad,India,Brick & Mortar,Direct,90000037,Office Depot,396
+2024-03-01,PC,Custom PC,P109,AQ Titan Gaming,UK,E-Commerce,Direct,90000028,Target,344
+2024-01-01,PC,Custom PC,P109,AQ Titan Gaming,Germany,Brick & Mortar,Retailer,90000003,Atliq Exclusive,169
+2024-04-01,Peripherals,Mouse,P114,AQ Wireless Mouse,Brazil,E-Commerce,Direct,ZZZ2729,,227
+2024-06-01,Peripherals,Storage,P101,AQ NVMe SSD,Japan,E-Commerce,Retailer,90000030,Croma,361
+2024-04-01,Peripherals,Memory,P103,AQ DDR4 RAM,Sweden,E-Commerce,Direct,90000034,Boulanger,509
+2024-03-01,PC,Ultrabook,P110,AQ SlimBook 14,Singapore,Brick & Mortar,Direct,90000035,Euronics,406 units
+2024-04-01,Peripherals,Mouse,P107,AQ Gaming Mouse,USA,E-Commerce,Direct,90000038,Argos,142
+2024-02-01,Peripherals,Mouse,P114,AQ Wireless Mouse,Canada,E-Commerce,Retailer,90000006,Best Buy,151
+2024-02-01,Peripherals,,P113,AQ Mousepad,Japan,E-Commerce,Retailer,90000030,Croma,305
+2024-06-01,Peripherals,Mouse,P107,AQ Gaming Mouse,Sweden,E-Commerce,Direct,90000022,Amazon ,24
+2024-03-01,Peripherals,Memory,P103,AQ DDR4 RAM,Brazil,E-Commerce,Direct,90000032,Currys,114
+2024-03-01,Peripherals,Headphones,P106,AQ Studio Pro,Japan,E-Commerce,Retailer,90000018,,464
+2024-06-01,Peripherals,Storage,P101,AQ NVMe SSD,Japan,E-Commerce,Retailer,ZZZ1166,,265
+2024-01-01,Peripherals,Memory,P104,AQ DDR5 RAM,Germany,Brick & Mortar,Retailer,90000027,Walmart,262
+2024-02-01,Peripherals,-,P112,AQ RGB Strip,Australia,Brick & Mortar,Direct,90000031,Reliance Digital,340
+2024-04-01,Peripherals,,P113,AQ Mousepad,USA,E-Commerce,Direct,90000002,Amazon ,51 units
+2024-02-01,Peripherals,Mouse,P107,AQ Gaming Mouse,UK,E-Commerce,Direct,90000016,Staples,169
+2024-03-01,Peripherals,Keyboard,P108,AQ Mech Keyboard,UAE,E-Commerce,Retailer,90000036,Staples,277
+2024-04-01,Peripherals,-,P112,AQ RGB Strip,UAE,E-Commerce,Retailer,90000036,Staples,175
+2024-06-01,Peripherals,Keyboard,P108,AQ Mech Keyboard,Japan,E-Commerce,Retailer,90000018,,159
+2024-02-01,Peripherals,Storage,P102,AQ SATA SSD,India,Brick & Mortar,Direct,90000013,MediaMarkt,159
+2024-06-01,PC,Custom PC,P109,AQ Titan Gaming,UAE,,Retailer,90000012,Currys,99
+2024-06-01,Peripherals,Keyboard,P108,AQ Mech Keyboard,Japan,E-Commerce,Retailer,ZZZ9595,,309
+2024-01-01,Peripherals,Mouse,P114,AQ Wireless Mouse,India,Brick & Mortar,Direct,90000013,MediaMarkt,153
+2024-03-01,Peripherals,Memory,P103,AQ DDR4 RAM,Brazil,E-Commerce,Direct,90000020,Fnac,19
+2024-02-01,Peripherals,Headphones,P105,AQ Bass Master,Germany,Brick & Mortar,Retailer,90000003,Atliq Exclusive,39 units
+2024-03-01,Peripherals,-,P112,AQ RGB Strip,Norway,Brick & Mortar,Retailer,90000009,Costco,336
+2024-01-01,Peripherals,Mouse,P114,AQ Wireless Mouse,India,Brick & Mortar,Direct,90000001,Amazon,297
+2024-04-01,Peripherals,Keyboard,P108,AQ Mech Keyboard,France,Brick & Mortar,Direct,90000029,Costco,174
+2024-01-01,Peripherals,Headphones,P105,AQ Bass Master,Australia,Brick & Mortar,Direct,90000031,Reliance Digital,55
+2024-04-01,Peripherals,Keyboard,P108,AQ Mech Keyboard,France,UNKNOWN,Direct,90000005,Flipkart,310
+2024-06-01,Peripherals,Storage,P101,AQ NVMe SSD,Sweden,E-Commerce,Direct,90000010,Croma,89
+2024-03-01,Peripherals,Storage,P102,AQ SATA SSD,Canada,E-Commerce,Direct,ZZZ2940,,293
+2024-05-01,PC,Ultrabook,P110,AQ SlimBook 14,UK,E-Commerce,Direct,90000040,Fnac,126
+2024-04-01,Peripherals,Keyboard,P108,AQ Mech Keyboard,France,Brick & Mortar,Direct,90000029,Costco,165
+2024-04-01,Peripherals,Headphones,P105,AQ Bass Master,India,Brick & Mortar,Direct,90000037,Office Depot,313 units
+2024-05-01,Peripherals,-,P112,AQ RGB Strip,Australia,Brick & Mortar,Direct,90000007,Walmart,486
+2024-06-01,Peripherals,Memory,P104,AQ DDR5 RAM,France,Brick & Mortar,Direct,90000017,Office Depot,335
+2024-02-01,Peripherals,Memory,P104,AQ DDR5 RAM,UAE,,Retailer,90000012,Currys,279
+2024-02-01,Peripherals,Storage,P101,AQ NVMe SSD,Germany,Brick & Mortar,Retailer,90000027,Walmart,244
+2024-04-01,Peripherals,Headphones,P105,AQ Bass Master,Germany,Brick & Mortar,Retailer,90000003,Atliq Exclusive,122
+2024-06-01,Peripherals,Headphones,P105,AQ Bass Master,Japan,E-Commerce,Retailer,90000030,Croma,38
+2024-03-01,Peripherals,,P113,AQ Mousepad,India,Brick & Mortar,Direct,ZZZ4241,,215
+2024-05-01,Peripherals,Memory,P104,AQ DDR5 RAM,Germany,Brick & Mortar,Retailer,90000003,Atliq Exclusive,79
+2024-02-01,Peripherals,Storage,P102,AQ SATA SSD,UK,E-Commerce,Direct,90000004,AltiQ Exclusive,88
+2024-05-01,Peripherals,-,P112,AQ RGB Strip,India,Brick & Mortar,Direct,90000037,Office Depot,475 units
+2024-04-01,Peripherals,Storage,P102,AQ SATA SSD,Japan,E-Commerce,Retailer,90000030,Croma,356
+2024-06-01,Peripherals,Mouse,P107,AQ Gaming Mouse,Japan,E-Commerce,Retailer,90000018,,268
+2024-04-01,Peripherals,Keyboard,P108,AQ Mech Keyboard,Japan,E-Commerce,Retailer,90000006,Best Buy,302
+2024-04-01,Peripherals,-,P112,AQ RGB Strip,Norway,Brick & Mortar,Retailer,90000021,Amazon,312
+2024-01-01,Peripherals,Storage,P102,AQ SATA SSD,Germany,Brick & Mortar,Retailer,90000015,Euronics,505
+2024-05-01,Peripherals,Storage,P101,AQ NVMe SSD,Japan,E-Commerce,Retailer,90000018,,291
+2024-02-01,Peripherals,Keyboard,P108,AQ Mech Keyboard,Sweden,E-Commerce,Direct,ZZZ8245,,472
+2024-02-01,PC,Ultrabook,P110,AQ SlimBook 14,UK,E-Commerce,Direct,90000028,Target,335
+2024-01-01,Peripherals,Keyboard,P108,AQ Mech Keyboard,Singapore,Brick & Mortar,Direct,90000023,Atliq Exclusive,214
+2024-03-01,Peripherals,UNKNOWN,P111,AQ Generic Fan,Australia,Brick & Mortar,Direct,90000007,Walmart,439 units
+2024-03-01,Peripherals,Mouse,P107,AQ Gaming Mouse,Brazil,E-Commerce,Direct,90000032,Currys,154
+2024-05-01,Peripherals,Storage,P101,AQ NVMe SSD,Canada,E-Commerce,Retailer,90000030,Croma,50
+2024-03-01,Peripherals,Headphones,P106,AQ Studio Pro,Brazil,E-Commerce,Direct,90000008,Target,402
+2024-05-01,Peripherals,Mouse,P114,AQ Wireless Mouse,India,Brick & Mortar,Direct,90000001,Amazon,348
+2024-04-01,Peripherals,Mouse,P107,AQ Gaming Mouse,UK,E-Commerce,Direct,90000004,AltiQ Exclusive,107
+2024-03-01,PC,Ultrabook,P110,AQ SlimBook 14,Brazil,E-Commerce,Direct,90000032,Currys,329
+2024-01-01,Peripherals,Memory,P104,AQ DDR5 RAM,Japan,E-Commerce,Retailer,ZZZ9998,,71
+2024-04-01,Peripherals,Storage,P101,AQ NVMe SSD,Brazil,E-Commerce,Direct,90000032,Currys,57
+2024-06-01,PC,Ultrabook,P110,AQ SlimBook 14,UK,E-Commerce,Direct,90000016,Staples,363
+2024-03-01,PC,Custom PC,P109,AQ Titan Gaming,India,Brick & Mortar,Direct,90000001,Amazon,290 units
+2024-01-01,Peripherals,Memory,P104,AQ DDR5 RAM,Brazil,E-Commerce,Direct,90000008,Target,234
+2024-06-01,Peripherals,Mouse,P114,AQ Wireless Mouse,Sweden,E-Commerce,Direct,90000010,Croma,259
+2024-05-01,Peripherals,-,P112,AQ RGB Strip,Japan,E-Commerce,Retailer,90000018,,222
+2024-04-01,Peripherals,Memory,P104,AQ DDR5 RAM,Japan,E-Commerce,Retailer,90000030,Croma,281
+2024-04-01,Peripherals,Memory,P104,AQ DDR5 RAM,Germany,Brick & Mortar,Retailer,90000039,John Lewis,259
+2024-01-01,Peripherals,Headphones,P105,AQ Bass Master,Germany,Brick & Mortar,Retailer,90000027,Walmart,185
+2024-03-01,Peripherals,Mouse,P114,AQ Wireless Mouse,India,Brick & Mortar,Direct,ZZZ5634,,375
+2024-05-01,PC,Ultrabook,P110,AQ SlimBook 14,Brazil,E-Commerce,Direct,90000032,Currys,442
+2024-04-01,PC,Custom PC,P109,AQ Titan Gaming,Australia,Brick & Mortar,Direct,90000031,Reliance Digital,181
+2024-05-01,Peripherals,,P113,AQ Mousepad,Singapore,Brick & Mortar,Direct,90000035,Euronics,202 units
+2024-03-01,Peripherals,Mouse,P114,AQ Wireless Mouse,India,Brick & Mortar,Direct,90000013,MediaMarkt,359
+2024-05-01,Peripherals,Mouse,P107,AQ Gaming Mouse,Germany,Brick & Mortar,Retailer,90000015,Euronics,446
+2024-01-01,Peripherals,Headphones,P106,AQ Studio Pro,Australia,Brick & Mortar,Direct,90000031,Reliance Digital,368
+2024-04-01,Peripherals,UNKNOWN,P111,AQ Generic Fan,Germany,Brick & Mortar,Retailer,90000003,Atliq Exclusive,87
+2024-01-01,Peripherals,Memory,P103,AQ DDR4 RAM,Norway,Brick & Mortar,Retailer,90000033,MediaMarkt,507
+2024-03-01,Peripherals,Mouse,P114,AQ Wireless Mouse,Australia,Brick & Mortar,Direct,90000007,Walmart,456
+2024-01-01,PC,Custom PC,P109,AQ Titan Gaming,Canada,E-Commerce,Retailer,ZZZ1251,,368
+2024-04-01,Peripherals,Mouse,P114,AQ Wireless Mouse,Germany,Brick & Mortar,Retailer,90000003,Atliq Exclusive,76
+2024-04-01,Peripherals,,P113,AQ Mousepad,France,Brick & Mortar,Direct,90000017,Office Depot,187
+2024-06-01,Peripherals,Mouse,P107,AQ Gaming Mouse,Germany,Brick & Mortar,Retailer,90000003,Atliq Exclusive,46 units
+2024-06-01,Peripherals,Mouse,P114,AQ Wireless Mouse,Singapore,Brick & Mortar,Direct,90000035,Euronics,199
+2024-06-01,Peripherals,-,P112,AQ RGB Strip,Brazil,E-Commerce,Direct,90000032,Currys,458
+2024-01-01,PC,Ultrabook,P110,AQ SlimBook 14,France,UNKNOWN,Direct,90000005,Flipkart,135
+2024-06-01,Peripherals,Storage,P101,AQ NVMe SSD,Australia,Brick & Mortar,Direct,90000019,John Lewis,113
+2024-04-01,Peripherals,Storage,P102,AQ SATA SSD,India,Brick & Mortar,Direct,90000001,Amazon,358
+2024-04-01,Peripherals,Memory,P103,AQ DDR4 RAM,Brazil,E-Commerce,Direct,90000020,Fnac,457
+2024-01-01,Peripherals,Headphones,P106,AQ Studio Pro,UK,E-Commerce,Direct,ZZZ5806,,189
+2024-04-01,Peripherals,Memory,P103,AQ DDR4 RAM,UK,E-Commerce,Direct,90000016,Staples,279
+2024-05-01,Peripherals,UNKNOWN,P111,AQ Generic Fan,UAE,,Retailer,90000012,Currys,87
+2024-01-01,PC,Ultrabook,P110,AQ SlimBook 14,India,Brick & Mortar,Direct,90000025,Flipkart,319 units
+2024-04-01,Peripherals,Storage,P101,AQ NVMe SSD,USA,E-Commerce,Direct,90000038,Argos,75
+2024-04-01,Peripherals,UNKNOWN,P111,AQ Generic Fan,France,Brick & Mortar,Direct,90000017,Office Depot,238
+2024-06-01,Peripherals,Storage,P101,AQ NVMe SSD,Japan,E-Commerce,Retailer,90000030,Croma,465
+2024-06-01,PC,Custom PC,P109,AQ Titan Gaming,Singapore,Brick & Mortar,Direct,90000011,Reliance Digital,46
+2024-03-01,PC,Ultrabook,P110,AQ SlimBook 14,Brazil,E-Commerce,Direct,90000020,Fnac,335
+2024-06-01,Peripherals,Headphones,P105,AQ Bass Master,Japan,E-Commerce,Retailer,90000030,Croma,436
+2024-02-01,Peripherals,Mouse,P107,AQ Gaming Mouse,Australia,Brick & Mortar,Direct,ZZZ2747,,128
+2024-05-01,Peripherals,Headphones,P106,AQ Studio Pro,India,Brick & Mortar,Direct,90000037,Office Depot,155
+2024-01-01,Peripherals,Mouse,P114,AQ Wireless Mouse,USA,E-Commerce,Direct,90000026,Best Buy,135
+2024-05-01,Peripherals,Mouse,P114,AQ Wireless Mouse,UK,E-Commerce,Direct,90000004,AltiQ Exclusive,480 units
+2024-06-01,Peripherals,Keyboard,P108,AQ Mech Keyboard,Australia,Brick & Mortar,Direct,90000019,John Lewis,399
+2024-05-01,Peripherals,,P113,AQ Mousepad,Canada,Brick & Mortar,Direct,90000023,Atliq Exclusive,127
+2024-02-01,PC,Ultrabook,P110,AQ SlimBook 14,France,Brick & Mortar,Direct,90000017,Office Depot,346
+2024-06-01,Peripherals,Storage,P102,AQ SATA SSD,India,Brick & Mortar,Direct,90000001,Amazon,326
+2024-03-01,Peripherals,,P113,AQ Mousepad,France,Brick & Mortar,Direct,90000029,Costco,30
+2024-03-01,Peripherals,-,P112,AQ RGB Strip,Norway,Brick & Mortar,Retailer,90000009,Costco,50
+2024-03-01,Peripherals,-,P112,AQ RGB Strip,Germany,Brick & Mortar,Retailer,ZZZ3877,,101
+2024-05-01,Peripherals,Storage,P101,AQ NVMe SSD,UAE,E-Commerce,Retailer,90000024,AltiQ Exclusive,282
+2024-03-01,Peripherals,Mouse,P114,AQ Wireless Mouse,Singapore,Brick & Mortar,Direct,90000011,Reliance Digital,141
+2024-03-01,Peripherals,-,P112,AQ RGB Strip,Sweden,E-Commerce,Direct,90000022,Amazon ,409 units
+2024-04-01,Peripherals,Storage,P102,AQ SATA SSD,Sweden,E-Commerce,Direct,90000010,Croma,388
+2024-06-01,Peripherals,-,P112,AQ RGB Strip,USA,E-Commerce,Direct,90000026,Best Buy,507
+2024-03-01,Peripherals,Storage,P102,AQ SATA SSD,USA,E-Commerce,Direct,90000026,Best Buy,10
+2024-05-01,Peripherals,Storage,P102,AQ SATA SSD,Japan,E-Commerce,Retailer,90000030,Croma,191
+2024-05-01,Peripherals,Mouse,P107,AQ Gaming Mouse,India,Brick & Mortar,Direct,90000001,Amazon,487
+2024-01-01,Peripherals,UNKNOWN,P111,AQ Generic Fan,Germany,Brick & Mortar,Retailer,90000015,Euronics,236
+2024-05-01,Peripherals,Storage,P101,AQ NVMe SSD,UAE,E-Commerce,Retailer,ZZZ6374,,482
+2024-02-01,Peripherals,UNKNOWN,P111,AQ Generic Fan,France,UNKNOWN,Direct,90000005,Flipkart,334
+2024-06-01,Peripherals,Headphones,P105,AQ Bass Master,Germany,Brick & Mortar,Retailer,90000003,Atliq Exclusive,207
+2024-02-01,Peripherals,Storage,P101,AQ NVMe SSD,Germany,Brick & Mortar,Retailer,90000003,Atliq Exclusive,165 units
+2024-01-01,Peripherals,Storage,P102,AQ SATA SSD,UK,E-Commerce,Direct,90000016,Staples,466
+2024-02-01,Peripherals,Mouse,P107,AQ Gaming Mouse,Japan,E-Commerce,Retailer,90000030,Croma,201
+2024-04-01,PC,Ultrabook,P110,AQ SlimBook 14,Sweden,E-Commerce,Direct,90000010,Croma,461
+2024-06-01,Peripherals,Storage,P102,AQ SATA SSD,Brazil,E-Commerce,Direct,90000032,Currys,323
+2024-03-01,Peripherals,Storage,P101,AQ NVMe SSD,UAE,E-Commerce,Retailer,90000024,AltiQ Exclusive,120
+2024-04-01,Peripherals,Memory,P104,AQ DDR5 RAM,UAE,E-Commerce,Retailer,90000024,AltiQ Exclusive,56
+2024-05-01,Peripherals,Storage,P101,AQ NVMe SSD,Canada,Brick & Mortar,Retailer,ZZZ6876,,38
+2024-03-01,Peripherals,Memory,P104,AQ DDR5 RAM,Brazil,E-Commerce,Direct,90000008,Target,494
+2024-01-01,Peripherals,UNKNOWN,P111,AQ Generic Fan,USA,E-Commerce,Direct,90000014,Boulanger,343
+2024-05-01,Peripherals,Storage,P101,AQ NVMe SSD,UK,E-Commerce,Direct,90000004,AltiQ Exclusive,407 units
+2024-02-01,Peripherals,Memory,P103,AQ DDR4 RAM,India,Brick & Mortar,Direct,90000037,Office Depot,102
+2024-05-01,Peripherals,Memory,P104,AQ DDR5 RAM,USA,E-Commerce,Direct,90000038,Argos,112
+2024-03-01,Peripherals,,P113,AQ Mousepad,Sweden,E-Commerce,Direct,90000010,Croma,417
+2024-01-01,Peripherals,Headphones,P105,AQ Bass Master,Sweden,E-Commerce,Direct,90000010,Croma,78
+2024-03-01,Peripherals,,P113,AQ Mousepad,UAE,,Retailer,90000012,Currys,51
+2024-02-01,Peripherals,Storage,P101,AQ NVMe SSD,Singapore,Brick & Mortar,Direct,90000023,Atliq Exclusive,406
+2024-05-01,Peripherals,Headphones,P106,AQ Studio Pro,USA,E-Commerce,Direct,ZZZ3854,,131
+2024-02-01,Peripherals,-,P112,AQ RGB Strip,Germany,Brick & Mortar,Retailer,90000027,Walmart,267
+2024-06-01,Peripherals,Storage,P102,AQ SATA SSD,Australia,Brick & Mortar,Direct,90000031,Reliance Digital,235
+2024-05-01,PC,Ultrabook,P110,AQ SlimBook 14,Australia,Brick & Mortar,Direct,90000007,Walmart,242 units
+2024-02-01,PC,Ultrabook,P110,AQ SlimBook 14,Germany,Brick & Mortar,Retailer,90000003,Atliq Exclusive,383
+2024-03-01,Peripherals,Keyboard,P108,AQ Mech Keyboard,Germany,Brick & Mortar,Retailer,90000003,Atliq Exclusive,488
+2024-01-01,Peripherals,Keyboard,P108,AQ Mech Keyboard,USA,E-Commerce,Direct,90000026,Best Buy,216
+2024-04-01,Peripherals,-,P112,AQ RGB Strip,France,Brick & Mortar,Direct,90000029,Costco,34
+2024-03-01,PC,Ultrabook,P110,AQ SlimBook 14,Sweden,E-Commerce,Direct,90000010,Croma,32
+2024-03-01,PC,Ultrabook,P110,AQ SlimBook 14,India,Brick & Mortar,Direct,90000001,Amazon,311
+2024-06-01,Peripherals,Headphones,P106,AQ Studio Pro,India,Brick & Mortar,Direct,ZZZ9692,,159
+2024-05-01,PC,Ultrabook,P110,AQ SlimBook 14,UK,E-Commerce,Direct,90000028,Target,48
+2024-06-01,Peripherals,UNKNOWN,P111,AQ Generic Fan,UAE,E-Commerce,Retailer,90000036,Staples,370
+2024-04-01,Peripherals,Keyboard,P108,AQ Mech Keyboard,Germany,Brick & Mortar,Retailer,90000015,Euronics,216 units
+2024-04-01,Peripherals,Mouse,P107,AQ Gaming Mouse,Germany,Brick & Mortar,Retailer,90000027,Walmart,371
+2024-03-01,Peripherals,Mouse,P107,AQ Gaming Mouse,Canada,Brick & Mortar,Retailer,90000021,Amazon,343
+2024-03-01,Peripherals,Memory,P103,AQ DDR4 RAM,Australia,Brick & Mortar,Direct,90000031,Reliance Digital,31
+2024-01-01,Peripherals,Storage,P102,AQ SATA SSD,UK,E-Commerce,Direct,90000028,Target,55
+2024-02-01,PC,Custom PC,P109,AQ Titan Gaming,UK,E-Commerce,Direct,90000004,AltiQ Exclusive,312
+2024-05-01,Peripherals,Headphones,P106,AQ Studio Pro,Brazil,E-Commerce,Direct,90000008,Target,216
+2024-06-01,Peripherals,,P113,AQ Mousepad,UK,E-Commerce,Direct,ZZZ1842,,499
+2024-05-01,Peripherals,Headphones,P105,AQ Bass Master,Singapore,Brick & Mortar,Direct,90000023,Atliq Exclusive,66
+2024-05-01,Peripherals,Memory,P104,AQ DDR5 RAM,Sweden,E-Commerce,Direct,90000010,Croma,346
+2024-02-01,Peripherals,Mouse,P114,AQ Wireless Mouse,Australia,Brick & Mortar,Direct,90000007,Walmart,191 units
+2024-03-01,Peripherals,Storage,P102,AQ SATA SSD,Japan,E-Commerce,Retailer,90000018,,295
+2024-04-01,Peripherals,Mouse,P114,AQ Wireless Mouse,UAE,E-Commerce,Retailer,90000036,Staples,406
+2024-05-01,Peripherals,UNKNOWN,P111,AQ Generic Fan,Germany,Brick & Mortar,Retailer,90000003,Atliq Exclusive,280
+2024-05-01,Peripherals,Storage,P101,AQ NVMe SSD,Japan,E-Commerce,Retailer,90000018,,14
+2024-03-01,Peripherals,-,P112,AQ RGB Strip,Brazil,E-Commerce,Direct,90000020,Fnac,476
+2024-03-01,Peripherals,Storage,P101,AQ NVMe SSD,UAE,,Retailer,90000012,Currys,444
+2024-05-01,Peripherals,UNKNOWN,P111,AQ Generic Fan,USA,E-Commerce,Direct,ZZZ2140,,87
+2024-01-01,Peripherals,Storage,P102,AQ SATA SSD,Sweden,E-Commerce,Direct,90000034,Boulanger,117
+2024-04-01,Peripherals,Keyboard,P108,AQ Mech Keyboard,Sweden,E-Commerce,Direct,90000022,Amazon ,86
+2024-03-01,Peripherals,-,P112,AQ RGB Strip,Norway,Brick & Mortar,Retailer,90000021,Amazon,410 units
+2024-05-01,Peripherals,Storage,P102,AQ SATA SSD,UK,E-Commerce,Direct,90000004,AltiQ Exclusive,79
+2024-05-01,Peripherals,Storage,P101,AQ NVMe SSD,Japan,E-Commerce,Retailer,90000006,Best Buy,148
+2024-06-01,Peripherals,Mouse,P107,AQ Gaming Mouse,Brazil,E-Commerce,Direct,90000032,Currys,319
+2024-04-01,Peripherals,Headphones,P105,AQ Bass Master,USA,E-Commerce,Direct,90000014,Boulanger,397
+2024-01-01,Peripherals,Headphones,P106,AQ Studio Pro,UK,E-Commerce,Direct,90000028,Target,60
+2024-06-01,Peripherals,UNKNOWN,P111,AQ Generic Fan,USA,E-Commerce,Direct,90000038,Argos,260
+2024-06-01,Peripherals,Headphones,P105,AQ Bass Master,Canada,Brick & Mortar,Retailer,ZZZ4612,,216
+2024-01-01,Peripherals,Storage,P101,AQ NVMe SSD,USA,E-Commerce,Direct,90000014,Boulanger,155
+2024-02-01,Peripherals,,P113,AQ Mousepad,France,Brick & Mortar,Direct,90000017,Office Depot,153
+2024-01-01,Peripherals,Storage,P101,AQ NVMe SSD,Brazil,E-Commerce,Direct,90000032,Currys,390 units
+2024-02-01,Peripherals,Memory,P103,AQ DDR4 RAM,India,Brick & Mortar,Direct,90000025,Flipkart,274
+2024-05-01,PC,Custom PC,P109,AQ Titan Gaming,Singapore,Brick & Mortar,Direct,90000023,Atliq Exclusive,43
+2024-06-01,Peripherals,Storage,P101,AQ NVMe SSD,UK,E-Commerce,Direct,90000028,Target,18
+2024-01-01,Peripherals,Mouse,P114,AQ Wireless Mouse,Norway,Brick & Mortar,Retailer,90000021,Amazon,302
+2024-05-01,Peripherals,Mouse,P107,AQ Gaming Mouse,India,Brick & Mortar,Direct,90000001,Amazon,217
+2024-01-01,Peripherals,Mouse,P107,AQ Gaming Mouse,USA,E-Commerce,Direct,90000002,Amazon ,499
+2024-02-01,Peripherals,,P113,AQ Mousepad,UK,E-Commerce,Direct,ZZZ8538,,431
+2024-01-01,Peripherals,Mouse,P107,AQ Gaming Mouse,Australia,Brick & Mortar,Direct,90000007,Walmart,132
+2024-05-01,Peripherals,Mouse,P107,AQ Gaming Mouse,Sweden,E-Commerce,Direct,90000034,Boulanger,47
+2024-03-01,Peripherals,-,P112,AQ RGB Strip,Sweden,E-Commerce,Direct,90000022,Amazon ,118 units
+2024-02-01,Peripherals,Storage,P102,AQ SATA SSD,Norway,Brick & Mortar,Retailer,90000033,MediaMarkt,322
+2024-05-01,PC,Custom PC,P109,AQ Titan Gaming,India,Brick & Mortar,Direct,90000013,MediaMarkt,469
+2024-03-01,Peripherals,-,P112,AQ RGB Strip,Germany,Brick & Mortar,Retailer,90000003,Atliq Exclusive,416
+2024-02-01,Peripherals,Storage,P102,AQ SATA SSD,Sweden,E-Commerce,Direct,90000010,Croma,132
+2024-02-01,PC,Ultrabook,P110,AQ SlimBook 14,Sweden,E-Commerce,Direct,90000010,Croma,404
+2024-01-01,Peripherals,Memory,P103,AQ DDR4 RAM,India,Brick & Mortar,Direct,90000001,Amazon,261
+2024-05-01,Peripherals,,P113,AQ Mousepad,USA,E-Commerce,Direct,ZZZ8354,,361
+2024-06-01,Peripherals,UNKNOWN,P111,AQ Generic Fan,UK,E-Commerce,Direct,90000040,Fnac,180
+2024-03-01,Peripherals,Memory,P103,AQ DDR4 RAM,France,Brick & Mortar,Direct,90000029,Costco,44
+2024-04-01,Peripherals,UNKNOWN,P111,AQ Generic Fan,Brazil,E-Commerce,Direct,90000020,Fnac,410 units
+2024-05-01,Peripherals,Storage,P101,AQ NVMe SSD,Singapore,Brick & Mortar,Direct,90000023,Atliq Exclusive,256
+2024-03-01,Peripherals,Keyboard,P108,AQ Mech Keyboard,Canada,Brick & Mortar,Direct,90000029,Costco,15
+2024-03-01,Peripherals,Mouse,P114,AQ Wireless Mouse,Australia,Brick & Mortar,Direct,90000019,John Lewis,54
+2024-01-01,PC,Ultrabook,P110,AQ SlimBook 14,Germany,Brick & Mortar,Retailer,90000039,John Lewis,266
+2024-04-01,PC,Ultrabook,P110,AQ SlimBook 14,UAE,E-Commerce,Retailer,90000036,Staples,484
+2024-04-01,Peripherals,Storage,P101,AQ NVMe SSD,India,Brick & Mortar,Direct,90000037,Office Depot,334
+2024-03-01,PC,Ultrabook,P110,AQ SlimBook 14,Australia,Brick & Mortar,Direct,ZZZ9214,,73
+2024-04-01,Peripherals,Storage,P102,AQ SATA SSD,Sweden,E-Commerce,Direct,90000022,Amazon ,362
+2024-05-01,Peripherals,UNKNOWN,P111,AQ Generic Fan,UAE,,Retailer,90000012,Currys,22
+2024-06-01,Peripherals,Keyboard,P108,AQ Mech Keyboard,France,Brick & Mortar,Direct,90000029,Costco,279 units
+2024-05-01,Peripherals,Memory,P103,AQ DDR4 RAM,UAE,E-Commerce,Retailer,90000024,AltiQ Exclusive,194
+2024-04-01,Peripherals,Mouse,P107,AQ Gaming Mouse,Sweden,E-Commerce,Direct,90000022,Amazon ,361
+2024-01-01,Peripherals,,P113,AQ Mousepad,India,Brick & Mortar,Direct,90000001,Amazon,336
+2024-01-01,Peripherals,Headphones,P106,AQ Studio Pro,Australia,Brick & Mortar,Direct,90000007,Walmart,292
+2024-03-01,Peripherals,Headphones,P105,AQ Bass Master,Germany,Brick & Mortar,Retailer,90000039,John Lewis,446
+2024-03-01,Peripherals,Storage,P102,AQ SATA SSD,USA,E-Commerce,Direct,90000038,Argos,338
+2024-03-01,Peripherals,Headphones,P105,AQ Bass Master,Germany,Brick & Mortar,Retailer,ZZZ7421,,80
+2024-06-01,Peripherals,Storage,P102,AQ SATA SSD,Brazil,E-Commerce,Direct,90000020,Fnac,293
+2024-06-01,Peripherals,,P113,AQ Mousepad,Sweden,E-Commerce,Direct,90000022,Amazon ,415
+2024-06-01,Peripherals,-,P112,AQ RGB Strip,Sweden,E-Commerce,Direct,90000034,Boulanger,62 units
+2024-06-01,Peripherals,Mouse,P107,AQ Gaming Mouse,Norway,Brick & Mortar,Retailer,90000033,MediaMarkt,180
+2024-03-01,Peripherals,Headphones,P105,AQ Bass Master,UAE,,Retailer,90000012,Currys,487
+2024-03-01,Peripherals,,P113,AQ Mousepad,Brazil,E-Commerce,Direct,90000032,Currys,100
+2024-02-01,Peripherals,Memory,P103,AQ DDR4 RAM,France,UNKNOWN,Direct,90000005,Flipkart,149
+2024-05-01,Peripherals,,P113,AQ Mousepad,Singapore,Brick & Mortar,Direct,90000035,Euronics,438
+2024-01-01,Peripherals,UNKNOWN,P111,AQ Generic Fan,Sweden,E-Commerce,Direct,90000022,Amazon ,462
+2024-02-01,PC,Ultrabook,P110,AQ SlimBook 14,Canada,Brick & Mortar,Direct,ZZZ3527,,83
+2024-06-01,Peripherals,,P113,AQ Mousepad,UK,E-Commerce,Direct,90000040,Fnac,414
+2024-06-01,Peripherals,Keyboard,P108,AQ Mech Keyboard,Germany,Brick & Mortar,Retailer,90000003,Atliq Exclusive,216
+2024-06-01,Peripherals,-,P112,AQ RGB Strip,UK,E-Commerce,Direct,90000016,Staples,241 units
+2024-03-01,Peripherals,,P113,AQ Mousepad,France,Brick & Mortar,Direct,90000029,Costco,131
+2024-02-01,Peripherals,Headphones,P105,AQ Bass Master,Australia,Brick & Mortar,Direct,90000031,Reliance Digital,463
+2024-03-01,Peripherals,UNKNOWN,P111,AQ Generic Fan,India,Brick & Mortar,Direct,90000037,Office Depot,234
+2024-03-01,Peripherals,,P113,AQ Mousepad,India,Brick & Mortar,Direct,90000025,Flipkart,268
+2024-04-01,Peripherals,Memory,P103,AQ DDR4 RAM,India,Brick & Mortar,Direct,90000013,MediaMarkt,424
+2024-02-01,Peripherals,Mouse,P114,AQ Wireless Mouse,France,Brick & Mortar,Direct,90000017,Office Depot,41
+2024-04-01,Peripherals,Mouse,P114,AQ Wireless Mouse,UAE,E-Commerce,Retailer,ZZZ2680,,375
+2024-01-01,Peripherals,Headphones,P105,AQ Bass Master,Japan,E-Commerce,Retailer,90000006,Best Buy,390
+2024-03-01,Peripherals,Keyboard,P108,AQ Mech Keyboard,Norway,Brick & Mortar,Retailer,90000033,MediaMarkt,83
+2024-01-01,Peripherals,Storage,P101,AQ NVMe SSD,Germany,Brick & Mortar,Retailer,90000015,Euronics,427 units
+2024-03-01,Peripherals,Storage,P101,AQ NVMe SSD,USA,E-Commerce,Direct,90000002,Amazon ,208
+2024-04-01,PC,Custom PC,P109,AQ Titan Gaming,UAE,E-Commerce,Retailer,90000024,AltiQ Exclusive,127
+2024-01-01,Peripherals,Headphones,P106,AQ Studio Pro,Germany,Brick & Mortar,Retailer,90000015,Euronics,19
+2024-01-01,Peripherals,Mouse,P114,AQ Wireless Mouse,Germany,Brick & Mortar,Retailer,90000003,Atliq Exclusive,170
+2024-02-01,Peripherals,Storage,P101,AQ NVMe SSD,Australia,Brick & Mortar,Direct,90000019,John Lewis,479
+2024-06-01,Peripherals,Mouse,P114,AQ Wireless Mouse,Norway,Brick & Mortar,Retailer,90000009,Costco,398
+2024-04-01,PC,Ultrabook,P110,AQ SlimBook 14,India,Brick & Mortar,Direct,ZZZ2298,,12
+2024-02-01,Peripherals,Mouse,P114,AQ Wireless Mouse,Sweden,E-Commerce,Direct,90000010,Croma,294
+2024-05-01,Peripherals,Mouse,P107,AQ Gaming Mouse,Brazil,E-Commerce,Direct,90000008,Target,401
+2024-02-01,Peripherals,Headphones,P105,AQ Bass Master,Brazil,E-Commerce,Direct,90000008,Target,26 units
+2024-04-01,Peripherals,UNKNOWN,P111,AQ Generic Fan,UK,E-Commerce,Direct,90000040,Fnac,231
+2024-01-01,Peripherals,Mouse,P114,AQ Wireless Mouse,Canada,E-Commerce,Direct,90000032,Currys,317
+2024-01-01,Peripherals,UNKNOWN,P111,AQ Generic Fan,Norway,Brick & Mortar,Retailer,90000033,MediaMarkt,296
+2024-06-01,Peripherals,Memory,P103,AQ DDR4 RAM,Australia,Brick & Mortar,Direct,90000019,John Lewis,214
+2024-05-01,Peripherals,Headphones,P106,AQ Studio Pro,UK,E-Commerce,Direct,90000016,Staples,300
+2024-02-01,Peripherals,UNKNOWN,P111,AQ Generic Fan,Japan,E-Commerce,Retailer,90000006,Best Buy,274
+2024-01-01,PC,Custom PC,P109,AQ Titan Gaming,Singapore,Brick & Mortar,Direct,ZZZ9312,,413
+2024-05-01,Peripherals,Storage,P101,AQ NVMe SSD,India,Brick & Mortar,Direct,90000025,Flipkart,457
+2024-01-01,Peripherals,UNKNOWN,P111,AQ Generic Fan,India,Brick & Mortar,Direct,90000025,Flipkart,194
+2024-06-01,Peripherals,Storage,P101,AQ NVMe SSD,Singapore,Brick & Mortar,Direct,90000023,Atliq Exclusive,400 units
+2024-03-01,Peripherals,Memory,P104,AQ DDR5 RAM,India,Brick & Mortar,Direct,90000001,Amazon,66
+2024-06-01,Peripherals,,P113,AQ Mousepad,Sweden,E-Commerce,Direct,90000022,Amazon ,64
+2024-03-01,PC,Custom PC,P109,AQ Titan Gaming,Sweden,E-Commerce,Direct,90000022,Amazon ,431
+2024-02-01,Peripherals,Mouse,P114,AQ Wireless Mouse,Japan,E-Commerce,Retailer,90000030,Croma,366
+2024-06-01,Peripherals,Memory,P103,AQ DDR4 RAM,Norway,Brick & Mortar,Retailer,90000009,Costco,41
+2024-01-01,Peripherals,Headphones,P105,AQ Bass Master,India,Brick & Mortar,Direct,90000013,MediaMarkt,23
+2024-01-01,Peripherals,Headphones,P106,AQ Studio Pro,Brazil,E-Commerce,Direct,ZZZ9444,,215
+2024-04-01,Peripherals,Headphones,P105,AQ Bass Master,Germany,Brick & Mortar,Retailer,90000003,Atliq Exclusive,400
+2024-02-01,Peripherals,Headphones,P105,AQ Bass Master,Singapore,Brick & Mortar,Direct,90000023,Atliq Exclusive,437
+2024-06-01,Peripherals,Headphones,P106,AQ Studio Pro,Japan,E-Commerce,Retailer,90000018,,69 units
+2024-04-01,Peripherals,Storage,P101,AQ NVMe SSD,USA,E-Commerce,Direct,90000026,Best Buy,389
+2024-04-01,Peripherals,Headphones,P106,AQ Studio Pro,UAE,,Retailer,90000012,Currys,264
+2024-03-01,Peripherals,Storage,P101,AQ NVMe SSD,Sweden,E-Commerce,Direct,90000034,Boulanger,133
+2024-06-01,Peripherals,Mouse,P107,AQ Gaming Mouse,Japan,E-Commerce,Retailer,90000006,Best Buy,234
+2024-02-01,PC,Custom PC,P109,AQ Titan Gaming,Australia,Brick & Mortar,Direct,90000019,John Lewis,162
+2024-01-01,Peripherals,Headphones,P106,AQ Studio Pro,Australia,Brick & Mortar,Direct,90000019,John Lewis,165
+2024-05-01,Peripherals,-,P112,AQ RGB Strip,Canada,E-Commerce,Direct,ZZZ3730,,362
+2024-03-01,Peripherals,Keyboard,P108,AQ Mech Keyboard,Germany,Brick & Mortar,Retailer,90000003,Atliq Exclusive,378
+2024-05-01,Peripherals,Mouse,P107,AQ Gaming Mouse,Japan,E-Commerce,Retailer,90000018,,323
+2024-01-01,Peripherals,UNKNOWN,P111,AQ Generic Fan,India,Brick & Mortar,Direct,90000001,Amazon,213 units
+2024-05-01,Peripherals,,P113,AQ Mousepad,Singapore,Brick & Mortar,Direct,90000011,Reliance Digital,482
+2024-02-01,Peripherals,Mouse,P114,AQ Wireless Mouse,Germany,Brick & Mortar,Retailer,90000039,John Lewis,356
+2024-01-01,Peripherals,Memory,P103,AQ DDR4 RAM,France,UNKNOWN,Direct,90000005,Flipkart,135
+2024-03-01,Peripherals,Headphones,P106,AQ Studio Pro,India,Brick & Mortar,Direct,90000025,Flipkart,499
+2024-01-01,PC,Ultrabook,P110,AQ SlimBook 14,Sweden,E-Commerce,Direct,90000010,Croma,356
+2024-03-01,Peripherals,Headphones,P106,AQ Studio Pro,France,Brick & Mortar,Direct,90000029,Costco,387
+2024-05-01,Peripherals,Memory,P103,AQ DDR4 RAM,Sweden,E-Commerce,Direct,ZZZ7012,,208
+2024-06-01,Peripherals,Headphones,P105,AQ Bass Master,UK,E-Commerce,Direct,90000016,Staples,489
+2024-01-01,Peripherals,-,P112,AQ RGB Strip,UAE,,Retailer,90000012,Currys,266
+2024-04-01,Peripherals,Storage,P101,AQ NVMe SSD,UAE,E-Commerce,Retailer,90000036,Staples,63 units
+2024-03-01,Peripherals,-,P112,AQ RGB Strip,France,Brick & Mortar,Direct,90000029,Costco,123
+2024-03-01,Peripherals,-,P112,AQ RGB Strip,Brazil,E-Commerce,Direct,90000032,Currys,100
+2024-02-01,Peripherals,Mouse,P114,AQ Wireless Mouse,France,UNKNOWN,Direct,90000005,Flipkart,231
+2024-06-01,Peripherals,Keyboard,P108,AQ Mech Keyboard,Japan,E-Commerce,Retailer,90000006,Best Buy,419
+2024-06-01,Peripherals,Headphones,P106,AQ Studio Pro,France,UNKNOWN,Direct,90000005,Flipkart,293
+2024-03-01,Peripherals,Storage,P101,AQ NVMe SSD,Brazil,E-Commerce,Direct,90000020,Fnac,435
+2024-06-01,Peripherals,-,P112,AQ RGB Strip,India,Brick & Mortar,Direct,ZZZ3852,,412
+2024-05-01,Peripherals,Memory,P104,AQ DDR5 RAM,Brazil,E-Commerce,Direct,90000008,Target,101
+2024-02-01,Peripherals,,P113,AQ Mousepad,Brazil,E-Commerce,Direct,90000032,Currys,19
+2024-05-01,PC,Ultrabook,P110,AQ SlimBook 14,UAE,E-Commerce,Retailer,90000024,AltiQ Exclusive,251 units
+2024-02-01,PC,Ultrabook,P110,AQ SlimBook 14,Japan,E-Commerce,Retailer,90000006,Best Buy,37
+2024-04-01,Peripherals,-,P112,AQ RGB Strip,Canada,Brick & Mortar,Direct,90000031,Reliance Digital,277
+2024-04-01,Peripherals,Mouse,P114,AQ Wireless Mouse,India,Brick & Mortar,Direct,90000037,Office Depot,36
+2024-03-01,Peripherals,UNKNOWN,P111,AQ Generic Fan,France,UNKNOWN,Direct,90000005,Flipkart,239
+2024-06-01,PC,Custom PC,P109,AQ Titan Gaming,Singapore,Brick & Mortar,Direct,90000023,Atliq Exclusive,77
+2024-06-01,PC,Ultrabook,P110,AQ SlimBook 14,UAE,,Retailer,90000012,Currys,392
+2024-04-01,PC,Custom PC,P109,AQ Titan Gaming,UK,E-Commerce,Direct,ZZZ3034,,264
+2024-03-01,Peripherals,Memory,P103,AQ DDR4 RAM,Singapore,Brick & Mortar,Direct,90000011,Reliance Digital,167
+2024-03-01,PC,Custom PC,P109,AQ Titan Gaming,Australia,Brick & Mortar,Direct,90000019,John Lewis,430
+2024-03-01,Peripherals,Memory,P104,AQ DDR5 RAM,India,Brick & Mortar,Direct,90000001,Amazon,501 units
+2024-03-01,Peripherals,Memory,P103,AQ DDR4 RAM,India,Brick & Mortar,Direct,90000001,Amazon,169
+2024-05-01,Peripherals,Storage,P102,AQ SATA SSD,Norway,Brick & Mortar,Retailer,90000033,MediaMarkt,328
+2024-05-01,PC,Ultrabook,P110,AQ SlimBook 14,Sweden,E-Commerce,Direct,90000010,Croma,101
+2024-06-01,Peripherals,Storage,P101,AQ NVMe SSD,Germany,Brick & Mortar,Retailer,90000039,John Lewis,185
+2024-01-01,Peripherals,Mouse,P114,AQ Wireless Mouse,USA,E-Commerce,Direct,90000002,Amazon ,37
+2024-06-01,Peripherals,,P113,AQ Mousepad,India,Brick & Mortar,Direct,90000037,Office Depot,150
+2024-02-01,Peripherals,,P113,AQ Mousepad,India,Brick & Mortar,Direct,ZZZ7825,,331
+2024-01-01,Peripherals,Keyboard,P108,AQ Mech Keyboard,India,Brick & Mortar,Direct,90000001,Amazon,283
+2024-06-01,Peripherals,Headphones,P105,AQ Bass Master,Australia,Brick & Mortar,Direct,90000031,Reliance Digital,132
+2024-03-01,Peripherals,Keyboard,P108,AQ Mech Keyboard,France,UNKNOWN,Direct,90000005,Flipkart,348 units
+2024-02-01,Peripherals,Keyboard,P108,AQ Mech Keyboard,Germany,Brick & Mortar,Retailer,90000027,Walmart,256
+2024-02-01,Peripherals,Headphones,P106,AQ Studio Pro,Germany,Brick & Mortar,Retailer,90000039,John Lewis,78
+2024-06-01,Peripherals,Headphones,P106,AQ Studio Pro,Singapore,Brick & Mortar,Direct,90000023,Atliq Exclusive,203
+2024-03-01,PC,Custom PC,P109,AQ Titan Gaming,UAE,E-Commerce,Retailer,90000036,Staples,59
+2024-02-01,Peripherals,Keyboard,P108,AQ Mech Keyboard,Brazil,E-Commerce,Direct,90000008,Target,145
+2024-02-01,Peripherals,Memory,P103,AQ DDR4 RAM,Australia,Brick & Mortar,Direct,90000007,Walmart,29
+2024-05-01,Peripherals,,P113,AQ Mousepad,Sweden,E-Commerce,Direct,90000034,Boulanger,465
+2024-04-01,Peripherals,Headphones,P105,AQ Bass Master,Japan,E-Commerce,Retailer,90000030,Croma,331
+2024-06-01,PC,Custom PC,P109,AQ Titan Gaming,Germany,Brick & Mortar,Retailer,ZZZ6313,,427
+2024-06-01,Peripherals,Headphones,P105,AQ Bass Master,USA,E-Commerce,Direct,90000026,Best Buy,358
+2024-05-01,Peripherals,Storage,P101,AQ NVMe SSD,UAE,E-Commerce,Retailer,90000024,AltiQ Exclusive,296
+2024-05-01,Peripherals,Headphones,P105,AQ Bass Master,Germany,Brick & Mortar,Retailer,ZZZ8527,,272
+2024-06-01,Peripherals,-,P112,AQ RGB Strip,Brazil,E-Commerce,Direct,90000008,Target,361
+2024-05-01,Peripherals,Headphones,P105,AQ Bass Master,UAE,E-Commerce,Retailer,90000036,Staples,435
+2024-05-01,Peripherals,Headphones,P105,AQ Bass Master,UAE,E-Commerce,Retailer,90000036,Staples,435
+2024-06-01,PC,Custom PC,P109,AQ Titan Gaming,Germany,Brick & Mortar,Retailer,90000027,Walmart,121
+2024-06-01,Peripherals,-,P112,AQ RGB Strip,Brazil,E-Commerce,Direct,90000008,Target,361
+2024-04-01,Peripherals,Headphones,P105,AQ Bass Master,Japan,E-Commerce,Retailer,90000030,Croma,331
+2024-03-01,Peripherals,Mouse,P114,AQ Wireless Mouse,India,Brick & Mortar,Direct,90000001,Amazon,273
+2024-01-01,Peripherals,Memory,P104,AQ DDR5 RAM,Germany,Brick & Mortar,Retailer,90000015,Euronics,272 units
+2024-06-01,Peripherals,Memory,P103,AQ DDR4 RAM,Singapore,Brick & Mortar,Direct,90000035,Euronics,375
